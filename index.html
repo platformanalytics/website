@@ -11,8 +11,8 @@
   <meta property="og:title" content="Workshop on Platform Analytics (WoPA)">
   <meta property="og:description" content="New scientific research on platform analytics. Annual single-track workshop at UC San Diego.">
   <meta property="og:url" content="https://platformanalytics.org/">
-  <meta name="theme-color" content="#0b3350">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f4c75'/%3E%3Ccircle cx='20' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='44' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='32' cy='44' r='7' fill='%23e8863a'/%3E%3Cpath d='M20 22L44 22L32 44Z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0a3f3a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e5c55'/%3E%3Ccircle cx='20' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='44' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='32' cy='44' r='7' fill='%23d99a2b'/%3E%3Cpath d='M20 22L44 22L32 44Z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,15 +43,15 @@
       --card: #ffffff;
       --line: #e5dfd2;
       --line-soft: #efeae0;
-      --ocean: #0f4c75;
-      --ocean-deep: #0b3350;
-      --ocean-ink: #071f33;
-      --sea-soft: #e7f0f7;
-      --sun: #e8863a;
-      --sun-deep: #c96a22;
-      --sun-soft: #fdeddf;
+      --ocean: #0e5c55;
+      --ocean-deep: #0a3f3a;
+      --ocean-ink: #062724;
+      --sea-soft: #e3f0ec;
+      --sun: #d99a2b;
+      --sun-deep: #a8711a;
+      --sun-soft: #fbf1da;
       --radius: 16px;
-      --shadow: 0 1px 2px rgba(23, 33, 43, .05), 0 8px 24px -12px rgba(11, 51, 80, .18);
+      --shadow: 0 1px 2px rgba(23, 33, 43, .05), 0 8px 24px -12px rgba(10, 63, 58, .18);
       --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
       --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
@@ -109,8 +109,8 @@
     .hero {
       position: relative; overflow: hidden; color: #fff;
       background:
-        radial-gradient(1200px 520px at 85% -10%, rgba(232, 134, 58, .45), transparent 60%),
-        radial-gradient(900px 480px at -10% 110%, rgba(84, 164, 214, .35), transparent 60%),
+        radial-gradient(1200px 520px at 85% -10%, rgba(217, 154, 43, .42), transparent 60%),
+        radial-gradient(900px 480px at -10% 110%, rgba(96, 196, 172, .32), transparent 60%),
         linear-gradient(160deg, var(--ocean-deep), var(--ocean-ink));
     }
     .hero::after {
@@ -124,7 +124,7 @@
     .eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
     .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--sun); border-radius: 2px; }
     .hero h1 { font-size: clamp(2.5rem, 2rem + 3.6vw, 4.6rem); font-weight: 500; margin: 0 0 .35em; max-width: 14ch; }
-    .hero h1 em { font-style: italic; color: #ffd6b6; }
+    .hero h1 em { font-style: italic; color: #ffe2a6; }
     .hero .lede { font-size: clamp(1.05rem, 1rem + .4vw, 1.3rem); max-width: 56ch; color: rgba(255,255,255,.86); margin-bottom: 2rem; }
     .facts { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2.25rem; padding: 0; list-style: none; }
     .facts li { display: inline-flex; align-items: center; gap: .45rem; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: .45rem .95rem; font-size: .92rem; font-weight: 500; }
@@ -133,7 +133,7 @@
     .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.35rem; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: .98rem; transition: transform .15s ease, background .15s ease; }
     .btn:active { transform: translateY(1px); }
     .btn-primary { background: var(--sun); color: #fff; }
-    .btn-primary:hover { background: #f19549; color: #fff; }
+    .btn-primary:hover { background: #e6a93a; color: #fff; }
     .btn-ghost { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.35); }
     .btn-ghost:hover { background: rgba(255,255,255,.16); color: #fff; }
     .btn svg { width: 18px; height: 18px; }
@@ -172,12 +172,12 @@
     .dates ol { list-style: none; margin: 0; padding: 0; }
     .dates li { display: grid; grid-template-columns: 12px 1fr; gap: 1rem; padding: .75rem 0; border-top: 1px solid rgba(255,255,255,.14); }
     .dates li:first-child { border-top: 0; padding-top: 0; }
-    .dates li::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--sun); margin-top: .45rem; box-shadow: 0 0 0 4px rgba(232,134,58,.25); }
+    .dates li::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--sun); margin-top: .45rem; box-shadow: 0 0 0 4px rgba(217,154,43,.3); }
     .dates .label { display: block; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.65); }
     .dates .value { font-weight: 600; font-size: 1.05rem; }
     .dates .note { display: block; font-size: .88rem; color: rgba(255,255,255,.72); }
     .dates .btn { margin-top: 1.25rem; width: 100%; justify-content: center; }
-    .dates a { color: #ffd6b6; }
+    .dates a { color: #ffe2a6; }
     .topics { columns: 2; column-gap: 2rem; margin: 0 0 1.25rem; padding-left: 1.2rem; }
     .topics li { break-inside: avoid; margin-bottom: .3rem; }
     @media (max-width: 560px) { .topics { columns: 1; } }
@@ -247,9 +247,9 @@
     .fora span { color: var(--ink-soft); font-size: .9rem; }
 
     /* ---------- Connect ---------- */
-    .connect { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+    .connect { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+    .connect .card + .card { margin-top: 0; }
     @media (max-width: 860px) { .connect { grid-template-columns: 1fr; } }
-    .form-frame { width: 100%; max-width: 640px; height: 520px; border: 0; border-radius: 12px; background: #fff; }
     .organizers { list-style: none; margin: 0; padding: 0; }
     .organizers li { display: flex; align-items: center; gap: .9rem; padding: .7rem 0; border-top: 1px solid var(--line-soft); }
     .organizers li:first-child { border-top: 0; padding-top: 0; }
@@ -262,7 +262,7 @@
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 
     @media print {
-      .site-header, .hero .actions, .skip, .form-frame { display: none !important; }
+      .site-header, .hero .actions, .skip { display: none !important; }
       .hero { background: none; color: var(--ink); }
       .hero h1 em { color: inherit; }
       details.panel, .card { box-shadow: none; }
@@ -276,7 +276,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Workshop on Platform Analytics home">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f4c75"/><circle cx="20" cy="22" r="7" fill="#fff"/><circle cx="44" cy="22" r="7" fill="#fff"/><circle cx="32" cy="44" r="7" fill="#e8863a"/><path d="M20 22L44 22L32 44Z" fill="none" stroke="#fff" stroke-width="3"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0e5c55"/><circle cx="20" cy="22" r="7" fill="#fff"/><circle cx="44" cy="22" r="7" fill="#fff"/><circle cx="32" cy="44" r="7" fill="#d99a2b"/><path d="M20 22L44 22L32 44Z" fill="none" stroke="#fff" stroke-width="3"/></svg>
       <span>WoPA<small>Workshop on Platform Analytics</small></span>
     </a>
     <nav aria-label="Primary">
@@ -284,8 +284,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#cfp">Call for papers</a></li>
         <li><a href="#past">Past workshops</a></li>
-        <li><a href="#fora">Other fora</a></li>
-        <li><a href="#connect">Stay connected</a></li>
+        <li><a href="#fora">Other forums</a></li>
+        <li><a href="#connect">Contact</a></li>
         <li><a class="cta" href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">Watch talks</a></li>
       </ul>
     </nav>
@@ -298,7 +298,7 @@
     <h1>Workshop on <em>Platform</em> Analytics</h1>
     <p class="lede">A single-track, multidisciplinary workshop presenting new scientific research on how data improves decisions in platform contexts. Held annually at UC San Diego.</p>
     <ul class="facts" aria-label="Key facts">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Spring 2027 &middot; dates to be announced</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>April 2&ndash;3, 2027</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Rady School of Management, UC San Diego</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v12H7l-3 3z"/></svg>In person, single track</li>
     </ul>
@@ -382,13 +382,14 @@
           <div class="card dates">
             <h3>Key dates</h3>
             <ol>
-              <li><div><span class="label">Submission deadline</span><span class="value">To be announced</span><span class="note">Recent editions closed in early December.</span></div></li>
+              <li><div><span class="label">Submissions open</span><span class="value">September 20, 2026</span><span class="note">Via EasyChair.</span></div></li>
+              <li><div><span class="label">Submission deadline</span><span class="value">December 6, 2026</span><span class="note">One submission per submitting author.</span></div></li>
               <li><div><span class="label">Notification</span><span class="value">To be announced</span><span class="note">Authors of accepted papers are invited to register first.</span></div></li>
-              <li><div><span class="label">Workshop</span><span class="value">Spring 2027</span><span class="note">University of California, San Diego. Exact dates to be announced.</span></div></li>
+              <li><div><span class="label">Workshop</span><span class="value">April 2&ndash;3, 2027</span><span class="note">Friday and Saturday, Rady School of Management, University of California, San Diego.</span></div></li>
             </ol>
             <!-- EDIT ME: when the EasyChair site opens, replace the paragraph below with:
             <a class="btn btn-primary" href="https://easychair.org/conferences/?conf=wopa2027" target="_blank" rel="noopener">Submit on EasyChair</a> -->
-            <p class="note" style="margin:1.25rem 0 0">The EasyChair submission link will be posted here when submissions open. To be notified, join the mailing list in <a href="#connect">Stay connected</a>.</p>
+            <p class="note" style="margin:1.25rem 0 0">Submissions open on September 20, 2026. The EasyChair submission link will be posted here on that date.</p>
           </div>
         </aside>
       </div>
@@ -1035,7 +1036,7 @@
     <div class="wrap">
       <div class="section-head">
         <div class="kicker">Community</div>
-        <h2>Links to other platform fora</h2>
+        <h2>Links to other platform forums</h2>
       </div>
       <ul class="fora">
         <li><a href="https://questromworld.bu.edu/platformstrategy/" target="_blank" rel="noopener"><strong>Platform Strategy Research Symposium</strong><span>Boston University Questrom</span></a></li>
@@ -1045,36 +1046,30 @@
         <li><a href="https://tap.podigee.io/" target="_blank" rel="noopener"><strong>Talking about Platforms</strong><span>Podcast interviews with academic researchers, among others</span></a></li>
         <li><a href="https://www.platformer.news/" target="_blank" rel="noopener"><strong>Platformer News</strong><span>Independent newsletter on platforms</span></a></li>
       </ul>
-      <p style="color:var(--ink-soft)">Please email us any other relevant fora we can include here.</p>
+      <p style="color:var(--ink-soft)">Please email us any other relevant forums we can include here.</p>
     </div>
   </section>
 
-  <!-- ================= STAY CONNECTED ================= -->
+  <!-- ================= CONTACT ================= -->
   <section class="block" id="connect">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">Stay connected</div>
-        <h2>Get future updates</h2>
-        <p>Enter your email address to receive announcements about calls for papers, programs and registration.</p>
+        <div class="kicker">Contact</div>
+        <h2>Organizers and contact</h2>
       </div>
       <div class="connect">
-        <div>
-          <iframe class="form-frame" title="WoPA mailing list sign-up form" src="https://docs.google.com/forms/d/e/1FAIpQLSegWe6Yo8xD0HgnD0qmcnh7vpDIWnVlnzJd62HUkLUvCWSSeQ/viewform?embedded=true" loading="lazy">Loading&hellip;</iframe>
+        <div class="card">
+          <h3>Organizers</h3>
+          <ul class="organizers">
+            <li><span class="avatar" aria-hidden="true">MK</span><div><a href="https://sites.google.com/view/minkyung-kim/home" target="_blank" rel="noopener">Minkyung Kim</a><small>Carnegie Mellon University</small></div></li>
+            <li><span class="avatar" aria-hidden="true">DP</span><div><a href="https://dadepro.github.io/" target="_blank" rel="noopener">Davide Proserpio</a><small>University of Southern California</small></div></li>
+            <li><span class="avatar" aria-hidden="true">KW</span><div><a href="https://kennethcwilbur.github.io/website//" target="_blank" rel="noopener">Kenneth C. Wilbur</a><small>University of California, San Diego</small></div></li>
+          </ul>
         </div>
-        <aside>
-          <div class="card">
-            <h3>Organizers</h3>
-            <ul class="organizers">
-              <li><span class="avatar" aria-hidden="true">MK</span><div><a href="https://sites.google.com/view/minkyung-kim/home" target="_blank" rel="noopener">Minkyung Kim</a><small>Carnegie Mellon University</small></div></li>
-              <li><span class="avatar" aria-hidden="true">DP</span><div><a href="https://dadepro.github.io/" target="_blank" rel="noopener">Davide Proserpio</a><small>University of Southern California</small></div></li>
-              <li><span class="avatar" aria-hidden="true">KW</span><div><a href="https://kennethcwilbur.github.io/website//" target="_blank" rel="noopener">Kenneth C. Wilbur</a><small>University of California, San Diego</small></div></li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Contact</h3>
-            <p style="margin:0">Email <span class="contact">Workshoponplatformanalytics</span>, followed by the &ldquo;at&rdquo; symbol, and then <span class="contact">gmail.com</span>.</p>
-          </div>
-        </aside>
+        <div class="card">
+          <h3>Contact</h3>
+          <p style="margin:0">Email <span class="contact">Workshoponplatformanalytics</span>, followed by the &ldquo;at&rdquo; symbol, and then <span class="contact">gmail.com</span>.</p>
+        </div>
       </div>
     </div>
   </section>

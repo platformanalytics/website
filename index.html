@@ -1,797 +1,1111 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop on Platform Analytics (WoPA)</title>
+  <meta name="description" content="The Workshop on Platform Analytics (WoPA) is a single-track, multidisciplinary workshop presenting new scientific research on platform analytics, held annually at UC San Diego.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://platformanalytics.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Workshop on Platform Analytics (WoPA)">
+  <meta property="og:description" content="New scientific research on platform analytics. Annual single-track workshop at UC San Diego.">
+  <meta property="og:url" content="https://platformanalytics.org/">
+  <meta name="theme-color" content="#0b3350">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f4c75'/%3E%3Ccircle cx='20' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='44' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='32' cy='44' r='7' fill='%23e8863a'/%3E%3Cpath d='M20 22L44 22L32 44Z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!--
+    ============================================================
+    HOW TO UPDATE THIS PAGE (organizers' notes)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    * 2027 key dates live in the "Call for Papers" section (search
+      for "EDIT ME"). Update the deadline, workshop dates and the
+      EasyChair link there and in the hero at the top.
+    * Registration and Travel sections for 2027 are kept below the
+      Call for Papers inside an HTML comment. Remove the comment
+      markers when registration opens.
+    * When the 2027 program is announced, add a new "Program" block
+      (copy the 2026 archive block and change the year), and move the
+      2026 block into "Past workshops" if it is not already there.
+    * Program committee lists are plain <li> items inside each year.
+    ============================================================
+  -->
+
   <style>
-  details {
-    margin-bottom: 1em; /* adds a line space after every details block */
-  }
-</style>
-<title>Workshop on Platform Analytics </title>
-<meta name="Workshop on Platform Analytics" content="Workshop on Platform Analytics">
-<meta name="viewport" content="width=device-width, initial-scale=0.85">
-<meta name="robots" content="index, follow" />
+    :root {
+      --ink: #17212b;
+      --ink-soft: #4d5966;
+      --ink-faint: #8a94a0;
+      --paper: #f8f5ee;
+      --card: #ffffff;
+      --line: #e5dfd2;
+      --line-soft: #efeae0;
+      --ocean: #0f4c75;
+      --ocean-deep: #0b3350;
+      --ocean-ink: #071f33;
+      --sea-soft: #e7f0f7;
+      --sun: #e8863a;
+      --sun-deep: #c96a22;
+      --sun-soft: #fdeddf;
+      --radius: 16px;
+      --shadow: 0 1px 2px rgba(23, 33, 43, .05), 0 8px 24px -12px rgba(11, 51, 80, .18);
+      --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    section.block, details.panel, details.sub { scroll-margin-top: 84px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    a { color: var(--ocean); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--sun-deep); }
+    p { margin: 0 0 1em; }
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
+    h2 { font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.4rem); }
+    h3 { font-size: 1.35rem; }
+    strong { font-weight: 600; }
+
+    .wrap { width: min(1080px, calc(100% - 2.5rem)); margin: 0 auto; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .skip { position: absolute; left: 1rem; top: -3rem; background: var(--sun); color: #fff; padding: .5rem .9rem; border-radius: 8px; z-index: 100; }
+    .skip:focus { top: 1rem; }
+
+    /* ---------- Header / nav ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(248, 245, 238, .88);
+      backdrop-filter: saturate(160%) blur(10px);
+      -webkit-backdrop-filter: saturate(160%) blur(10px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; }
+    .brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; color: var(--ink); font-weight: 700; letter-spacing: .01em; }
+    .brand svg { width: 34px; height: 34px; flex: none; }
+    .brand small { display: block; font-weight: 500; color: var(--ink-soft); font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; }
+    .nav { display: flex; flex-wrap: wrap; gap: .15rem .25rem; margin: 0; padding: 0; list-style: none; }
+    .nav a { display: inline-block; padding: .45rem .7rem; border-radius: 999px; font-size: .92rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+    .nav a:hover { background: var(--sea-soft); color: var(--ocean-deep); }
+    .nav a.cta { background: var(--ocean); color: #fff; }
+    .nav a.cta:hover { background: var(--ocean-deep); }
+    @media (max-width: 720px) {
+      .site-header { position: static; }
+      .site-header .wrap { flex-direction: column; align-items: flex-start; padding: .6rem 0; }
+      .nav { width: 100%; }
+      .nav a { padding: .35rem .6rem; font-size: .88rem; }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative; overflow: hidden; color: #fff;
+      background:
+        radial-gradient(1200px 520px at 85% -10%, rgba(232, 134, 58, .45), transparent 60%),
+        radial-gradient(900px 480px at -10% 110%, rgba(84, 164, 214, .35), transparent 60%),
+        linear-gradient(160deg, var(--ocean-deep), var(--ocean-ink));
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18;
+      background-image: radial-gradient(rgba(255,255,255,.7) 1px, transparent 1.5px);
+      background-size: 26px 26px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent 85%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent 85%);
+    }
+    .hero .wrap { position: relative; padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(3rem, 7vw, 5.5rem); }
+    .eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--sun); border-radius: 2px; }
+    .hero h1 { font-size: clamp(2.5rem, 2rem + 3.6vw, 4.6rem); font-weight: 500; margin: 0 0 .35em; max-width: 14ch; }
+    .hero h1 em { font-style: italic; color: #ffd6b6; }
+    .hero .lede { font-size: clamp(1.05rem, 1rem + .4vw, 1.3rem); max-width: 56ch; color: rgba(255,255,255,.86); margin-bottom: 2rem; }
+    .facts { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2.25rem; padding: 0; list-style: none; }
+    .facts li { display: inline-flex; align-items: center; gap: .45rem; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: .45rem .95rem; font-size: .92rem; font-weight: 500; }
+    .facts svg { width: 16px; height: 16px; opacity: .85; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.35rem; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: .98rem; transition: transform .15s ease, background .15s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--sun); color: #fff; }
+    .btn-primary:hover { background: #f19549; color: #fff; }
+    .btn-ghost { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.35); }
+    .btn-ghost:hover { background: rgba(255,255,255,.16); color: #fff; }
+    .btn svg { width: 18px; height: 18px; }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: clamp(3rem, 6vw, 5rem) 0; }
+    section.block + section.block { border-top: 1px solid var(--line-soft); }
+    .section-head { margin-bottom: 1.75rem; max-width: 62ch; }
+    .kicker { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--sun-deep); margin-bottom: .5rem; }
+    .section-head p { color: var(--ink-soft); font-size: 1.05rem; margin: 0; }
+
+    .grid-2 { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+    @media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .prose { font-size: 1.04rem; }
+    .prose p { margin-bottom: 1.1em; }
+    .prose blockquote { margin: 1.5rem 0; padding: .25rem 0 .25rem 1.25rem; border-left: 3px solid var(--sun); font-family: var(--serif); font-size: 1.3rem; font-style: italic; color: var(--ocean-deep); }
+
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem 1.6rem; }
+    .card h3 { font-size: 1.15rem; margin-bottom: 1rem; }
+    .card + .card { margin-top: 1.25rem; }
+    .kv { margin: 0; }
+    .kv div { display: grid; grid-template-columns: 7.5rem 1fr; gap: .75rem; padding: .6rem 0; border-top: 1px solid var(--line-soft); }
+    .kv div:first-child { border-top: 0; padding-top: 0; }
+    .kv dt { font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); padding-top: .2rem; }
+    .kv dd { margin: 0; }
+    .card ul.plain { margin: 0; padding: 0; list-style: none; }
+    .card ul.plain li { padding: .4rem 0; border-top: 1px solid var(--line-soft); }
+    .card ul.plain li:first-child { border-top: 0; padding-top: 0; }
+
+    /* ---------- CFP ---------- */
+    .cfp { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+    @media (max-width: 860px) { .cfp { grid-template-columns: 1fr; } }
+    .dates { background: linear-gradient(160deg, var(--ocean-deep), var(--ocean)); color: #fff; border: 0; }
+    .dates h3 { color: #fff; }
+    .dates ol { list-style: none; margin: 0; padding: 0; }
+    .dates li { display: grid; grid-template-columns: 12px 1fr; gap: 1rem; padding: .75rem 0; border-top: 1px solid rgba(255,255,255,.14); }
+    .dates li:first-child { border-top: 0; padding-top: 0; }
+    .dates li::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--sun); margin-top: .45rem; box-shadow: 0 0 0 4px rgba(232,134,58,.25); }
+    .dates .label { display: block; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.65); }
+    .dates .value { font-weight: 600; font-size: 1.05rem; }
+    .dates .note { display: block; font-size: .88rem; color: rgba(255,255,255,.72); }
+    .dates .btn { margin-top: 1.25rem; width: 100%; justify-content: center; }
+    .dates a { color: #ffd6b6; }
+    .topics { columns: 2; column-gap: 2rem; margin: 0 0 1.25rem; padding-left: 1.2rem; }
+    .topics li { break-inside: avoid; margin-bottom: .3rem; }
+    @media (max-width: 560px) { .topics { columns: 1; } }
+    .rules { background: var(--sea-soft); border-radius: 12px; padding: 1.1rem 1.3rem; border-left: 4px solid var(--ocean); }
+    .rules p:last-child { margin-bottom: 0; }
+
+    /* ---------- Collapsible panels ---------- */
+    details.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 1rem; overflow: hidden; }
+    details.panel > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.4rem; user-select: none; }
+    details.panel > summary::-webkit-details-marker { display: none; }
+    details.panel > summary:hover { background: #fcfaf6; }
+    details.panel > summary:focus-visible { outline: 3px solid var(--sun); outline-offset: -3px; }
+    .year { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; color: var(--ocean); line-height: 1; min-width: 4.2rem; }
+    .summary-text { flex: 1; min-width: 0; }
+    .summary-text strong { display: block; font-size: 1.08rem; }
+    .summary-text span { color: var(--ink-soft); font-size: .92rem; }
+    .chev { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--ocean); transition: transform .2s ease, background .2s ease; }
+    .chev svg { width: 16px; height: 16px; }
+    details[open] > summary .chev { transform: rotate(180deg); background: var(--sea-soft); }
+    .panel-body { padding: .25rem 1.4rem 1.6rem; border-top: 1px solid var(--line-soft); }
+    @media (max-width: 560px) {
+      details.panel > summary { padding: .95rem 1rem; gap: .75rem; }
+      .panel-body { padding: .25rem 1rem 1.25rem; }
+      .year { font-size: 1.5rem; min-width: 3.4rem; }
+    }
+
+    /* ---------- Schedule ---------- */
+    .day { display: inline-flex; align-items: center; gap: .6rem; margin: 1.5rem 0 .25rem; padding: .35rem .9rem; border-radius: 999px; background: var(--sun-soft); color: var(--sun-deep); font-family: var(--sans); font-weight: 600; font-size: .9rem; letter-spacing: .02em; }
+    .schedule { list-style: none; margin: 0; padding: 0; }
+    .schedule li { display: grid; grid-template-columns: 4.6rem 1fr; gap: 1rem; padding: .9rem 0; border-top: 1px solid var(--line-soft); }
+    .schedule li:first-child { border-top: 0; }
+    .schedule time { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ocean); padding-top: .15rem; }
+    .schedule .note { color: var(--ink-soft); }
+    .talk-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; line-height: 1.3; color: var(--ink); text-decoration: none; }
+    .talk-title:hover { color: var(--ocean); text-decoration: underline; }
+    .talk-meta { display: flex; flex-wrap: wrap; gap: .2rem 1.5rem; margin-top: .35rem; color: var(--ink-soft); font-size: .95rem; }
+    .talk-meta b { font-weight: 600; color: var(--ink); }
+    .talk-meta .role { color: var(--ink-faint); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; margin-right: .35rem; }
+    .authors { color: var(--ink-soft); font-size: .95rem; margin-top: .3rem; }
+    .video { display: inline-flex; align-items: center; gap: .35rem; margin-top: .45rem; font-size: .88rem; font-weight: 600; color: var(--ocean); text-decoration: none; padding: .25rem .65rem; border: 1px solid var(--line); border-radius: 999px; }
+    .video:hover { background: var(--sea-soft); }
+    .video svg { width: 14px; height: 14px; }
+    @media (max-width: 560px) { .schedule li { grid-template-columns: 3.8rem 1fr; gap: .6rem; } .talk-title { font-size: 1.05rem; } }
+
+    /* ---------- People ---------- */
+    details.sub { margin-top: 1.5rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+    details.sub > summary { list-style: none; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: .6rem; color: var(--ocean-deep); }
+    details.sub > summary::-webkit-details-marker { display: none; }
+    details.sub > summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .2s; margin-left: .2rem; }
+    details.sub[open] > summary::before { transform: rotate(45deg); }
+    .thanks { color: var(--ink-soft); font-size: .95rem; margin: .75rem 0 1rem; }
+    .people { columns: 3; column-gap: 2rem; margin: 0; padding: 0; list-style: none; font-size: .95rem; }
+    .people li { break-inside: avoid; padding: .3rem 0; border-bottom: 1px dotted var(--line); }
+    @media (max-width: 900px) { .people { columns: 2; } }
+    @media (max-width: 560px) { .people { columns: 1; } }
+
+    /* ---------- Travel ---------- */
+    .travel h4 { font-family: var(--sans); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sun-deep); margin: 1.5rem 0 .5rem; }
+    .travel ol { padding-left: 1.25rem; }
+    .travel li { margin-bottom: .6rem; }
+
+    /* ---------- Fora ---------- */
+    .fora { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; list-style: none; margin: 0 0 1.25rem; padding: 0; }
+    .fora a { display: block; height: 100%; padding: 1.1rem 1.25rem; background: var(--card); border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow); transition: transform .15s ease, border-color .15s ease; }
+    .fora a:hover { transform: translateY(-2px); border-color: var(--ocean); }
+    .fora strong { display: block; color: var(--ocean-deep); margin-bottom: .2rem; }
+    .fora span { color: var(--ink-soft); font-size: .9rem; }
+
+    /* ---------- Connect ---------- */
+    .connect { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+    @media (max-width: 860px) { .connect { grid-template-columns: 1fr; } }
+    .form-frame { width: 100%; max-width: 640px; height: 520px; border: 0; border-radius: 12px; background: #fff; }
+    .organizers { list-style: none; margin: 0; padding: 0; }
+    .organizers li { display: flex; align-items: center; gap: .9rem; padding: .7rem 0; border-top: 1px solid var(--line-soft); }
+    .organizers li:first-child { border-top: 0; padding-top: 0; }
+    .avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--sea-soft); color: var(--ocean-deep); font-weight: 700; display: grid; place-items: center; font-size: .9rem; flex: none; }
+    .organizers small { display: block; color: var(--ink-soft); }
+    .contact { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92rem; background: var(--sea-soft); padding: .3rem .55rem; border-radius: 6px; }
+
+    /* ---------- Footer ---------- */
+    footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--ink-soft); font-size: .9rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+    @media print {
+      .site-header, .hero .actions, .skip, .form-frame { display: none !important; }
+      .hero { background: none; color: var(--ink); }
+      .hero h1 em { color: inherit; }
+      details.panel, .card { box-shadow: none; }
+      .people { columns: 2; }
+    }
+  </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-  <h1>Workshop on Platform Analytics (WoPA) </h1>
-  <p>
-    Tap section headers to expand. Past talks are on <a href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank">the YouTube channel</a>.
-    <p>
- 
-<details>
-  <summary>
-    <b>Overview</b></summary>
-  <p>
-The Workshop on Platform Analytics presents new scientific research on platform analytics. 
-  <p>
-Platforms enable direct interactions between agents. Marketplaces connect buyers and sellers; media platforms connect advertisers, creators and consumers; sharing platforms connect resource owners with resource users; app stores connect software developers and users. Network externalities distinguish platforms from traditional business models: Platform value to customers depends on how many other customers, of various types, are using the same platform. 
-  <p>  
-Platforms have become pervasive in the digital economy. Most of the largest firms in the world are platforms, and there are also platforms of all sizes. 
-    Platform design enables valuable connections, platform policies structure customer transactions, and platforms remediate when things go wrong. 
-    Yet platform incentives may diverge from some customer interests, leading to some questionable practices. 
-    Policymakers at all levels are grappling with platform issues, suggesting a need for a deeper understanding of platform topics.
-  <p>
-"The purpose of knowledge is action." We construe Platform Analytics broadly as using data to improve decisions in a platform context. 
-  The decisions might be taken by platforms themselves, the customers they connect, policymakers or others. 
-    The data might come from within a platform or outside it, and the improvement may be from any party's perspective.
-  <p>
-WoPA's goal is to facilitate scholarly communication about platform analytics. We seek to promote high standards of evidence, relevance, openness, inclusivity and multidisciplinarity.
-<p>
-We thank the <a href="https://www.cmu.edu/tepper/" target="_blank">Carnegie Mellon University Tepper School of Business</a> for financial support. 
-  We thank the <a href="https://www.marshall.usc.edu/institutes-and-centers/initiative-on-digital-competition" target="_blank">
-USC Marshall Initiative on Digital Competition </a> and 
-  <a href="https://connect.informs.org/isms/home" target="_blank">
-  INFORMS Society for Marketing Science</a> for sponsoring past workshops. 
-    <p>
-   Accepted papers are archived below. 
-  Past talks are on <a href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank">the YouTube channel</a>.
-</details>
-<p>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Workshop on Platform Analytics home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f4c75"/><circle cx="20" cy="22" r="7" fill="#fff"/><circle cx="44" cy="22" r="7" fill="#fff"/><circle cx="32" cy="44" r="7" fill="#e8863a"/><path d="M20 22L44 22L32 44Z" fill="none" stroke="#fff" stroke-width="3"/></svg>
+      <span>WoPA<small>Workshop on Platform Analytics</small></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#cfp">Call for papers</a></li>
+        <li><a href="#past">Past workshops</a></li>
+        <li><a href="#fora">Other fora</a></li>
+        <li><a href="#connect">Stay connected</a></li>
+        <li><a class="cta" href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">Watch talks</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<details open>
-  <summary>
-    <b>2026 WoPA Program</b></summary>
-  <p>
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">2027 edition &middot; Call for papers</div>
+    <h1>Workshop on <em>Platform</em> Analytics</h1>
+    <p class="lede">A single-track, multidisciplinary workshop presenting new scientific research on how data improves decisions in platform contexts. Held annually at UC San Diego.</p>
+    <ul class="facts" aria-label="Key facts">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Spring 2027 &middot; dates to be announced</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Rady School of Management, UC San Diego</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v12H7l-3 3z"/></svg>In person, single track</li>
+    </ul>
+    <div class="actions">
+      <a class="btn btn-primary" href="#cfp">Read the call for papers
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#past">Browse past programs</a>
+    </div>
+  </div>
+</section>
 
-<p><u>Friday, April 24, 2026</u>
+<main id="main">
 
-<p>9:00 : Coffee, breakfast snacks
+  <!-- ================= ABOUT ================= -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">About the workshop</div>
+        <h2>Scholarly communication about platform analytics</h2>
+      </div>
+      <div class="grid-2">
+        <div class="prose">
+          <p>The Workshop on Platform Analytics presents new scientific research on platform analytics.</p>
+          <p>Platforms enable direct interactions between agents. Marketplaces connect buyers and sellers; media platforms connect advertisers, creators and consumers; sharing platforms connect resource owners with resource users; app stores connect software developers and users. Network externalities distinguish platforms from traditional business models: platform value to customers depends on how many other customers, of various types, are using the same platform.</p>
+          <p>Platforms have become pervasive in the digital economy. Most of the largest firms in the world are platforms, and there are also platforms of all sizes. Platform design enables valuable connections, platform policies structure customer transactions, and platforms remediate when things go wrong. Yet platform incentives may diverge from some customer interests, leading to some questionable practices. Policymakers at all levels are grappling with platform issues, suggesting a need for a deeper understanding of platform topics.</p>
+          <blockquote>&ldquo;The purpose of knowledge is action.&rdquo;</blockquote>
+          <p>We construe Platform Analytics broadly as using data to improve decisions in a platform context. The decisions might be taken by platforms themselves, the customers they connect, policymakers or others. The data might come from within a platform or outside it, and the improvement may be from any party's perspective.</p>
+          <p>WoPA's goal is to facilitate scholarly communication about platform analytics. We seek to promote high standards of evidence, relevance, openness, inclusivity and multidisciplinarity.</p>
+          <p>Accepted papers are archived below. Past talks are on <a href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">the WoPA YouTube channel</a>.</p>
+        </div>
+        <aside>
+          <div class="card">
+            <h3>At a glance</h3>
+            <dl class="kv">
+              <div><dt>Since</dt><dd>2023, four editions so far</dd></div>
+              <div><dt>Format</dt><dd>Single track, in person, roughly ten papers with discussants</dd></div>
+              <div><dt>Venue</dt><dd>Rady School of Management, University of California, San Diego</dd></div>
+              <div><dt>Organizers</dt><dd><a href="https://sites.google.com/view/minkyung-kim/home" target="_blank" rel="noopener">Minkyung Kim</a> (CMU), <a href="https://dadepro.github.io/" target="_blank" rel="noopener">Davide Proserpio</a> (USC), <a href="https://kennethcwilbur.github.io/website//" target="_blank" rel="noopener">Kenneth C. Wilbur</a> (UCSD)</dd></div>
+            </dl>
+          </div>
+          <div class="card">
+            <h3>Support</h3>
+            <ul class="plain">
+              <li>We thank the <a href="https://www.cmu.edu/tepper/" target="_blank" rel="noopener">Carnegie Mellon University Tepper School of Business</a> for financial support.</li>
+              <li>We thank the <a href="https://www.marshall.usc.edu/institutes-and-centers/initiative-on-digital-competition" target="_blank" rel="noopener">USC Marshall Initiative on Digital Competition</a> and the <a href="https://connect.informs.org/isms/home" target="_blank" rel="noopener">INFORMS Society for Marketing Science</a> for sponsoring past workshops.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-<p>10:15 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_67_Shunto.pdf" target="_blank">Can Privacy Technologies Replace Cookies? Ad Revenue in a Field Experiment</a>
-<br>Presenter: Shunto Kobayashi (Boston U.)
-<br>Discussant: Yanwen Wang (UBC)
+  <!-- ================= 2027 CALL FOR PAPERS ================= -->
+  <section class="block" id="cfp">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">2027 Call for papers</div>
+        <h2>Submit your working paper to WoPA 2027</h2>
+        <p>We invite new working papers on platform analytics for a competitive evaluation process. Most submissions receive direct feedback from the program committee.</p>
+      </div>
+      <div class="cfp">
+        <div class="prose">
+          <p>The Workshop on Platform Analytics presents new scientific research on platform analytics. We welcome relevant submissions from government, industry or any academic discipline, including computer science, economics, information systems, marketing, operations or others.</p>
+          <p>Relevant decisions might include platform design, rankings, listings, usage, pricing, advertising, personalization, ratings or reviews. Relevant topics might include:</p>
+          <ul class="topics">
+            <li>network externalities;</li>
+            <li>agent utility, search, matching, purchase or welfare;</li>
+            <li>reputation, manipulation, trust or fraud;</li>
+            <li>discrimination, diversity or fairness;</li>
+            <li>competition within or between platforms;</li>
+            <li>data privacy and sharing;</li>
+            <li>antitrust or other regulations;</li>
+          </ul>
+          <p>Ideal papers show how to use platform data to improve decisions in platform contexts.</p>
+          <div class="rules">
+            <p><strong>Eligibility.</strong> We focus on new, unpublished work in the spirit of a workshop to help improve works in progress. We have limited reviewing resources and presentation slots. Therefore, we will only review or consider papers that are not published, not currently invited for revision by a journal, and were first posted online within the two years prior to the submission deadline. Additionally, we will not review more than one submission per submitting author. We thank you in advance for adhering to these rules, and welcome questions or comments.</p>
+          </div>
+        </div>
+        <aside>
+          <!-- EDIT ME: 2027 key dates. Update the values below and the hero badge at the top of the page. -->
+          <div class="card dates">
+            <h3>Key dates</h3>
+            <ol>
+              <li><div><span class="label">Submission deadline</span><span class="value">To be announced</span><span class="note">Recent editions closed in early December.</span></div></li>
+              <li><div><span class="label">Notification</span><span class="value">To be announced</span><span class="note">Authors of accepted papers are invited to register first.</span></div></li>
+              <li><div><span class="label">Workshop</span><span class="value">Spring 2027</span><span class="note">University of California, San Diego. Exact dates to be announced.</span></div></li>
+            </ol>
+            <!-- EDIT ME: when the EasyChair site opens, replace the paragraph below with:
+            <a class="btn btn-primary" href="https://easychair.org/conferences/?conf=wopa2027" target="_blank" rel="noopener">Submit on EasyChair</a> -->
+            <p class="note" style="margin:1.25rem 0 0">The EasyChair submission link will be posted here when submissions open. To be notified, join the mailing list in <a href="#connect">Stay connected</a>.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-<p>11:15 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_13_Ali.pdf" target="_blank">Long or Short? Personalizing Ad Length and Frequency</a>
-<br>Presenter: Ali Goli (U. of Rochester)
-<br>Discussant: Mingyu Joo (UC Riverside)
+  <!-- ================= 2027 REGISTRATION AND TRAVEL (hidden until announced) =================
+       Remove this comment's opening and closing markers to publish these sections.
 
-<p>12:30 : Lunch
+  <section class="block" id="registration">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">2027 Registration</div>
+        <h2>Register for WoPA 2027</h2>
+        <p>All attendees must register. Registration fees primarily go toward catering expenses.</p>
+      </div>
+      <div class="grid-2">
+        <div class="prose">
+          <p><a class="btn btn-primary" href="REGISTRATION-LINK" target="_blank" rel="noopener">Register here</a></p>
+          <p>Please contact <a href="mailto:jthiel@ucsd.edu">Jana</a> in case of difficulties, questions or refunds.</p>
+          <p>Registration includes lunch both days and dinner on the first day, including vegetarian and vegan options.</p>
+          <p>WoPA is an in-person event with no online or hybrid attendance option. We intend to post talk videos on <a href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">the WoPA YouTube channel</a> after the workshop.</p>
+        </div>
+        <aside>
+          <div class="card">
+            <h3>Fees</h3>
+            <dl class="kv">
+              <div><dt>Students</dt><dd>$99 doctoral students and postdocs</dd></div>
+              <div><dt>Faculty</dt><dd>$199 faculty and non-profits</dd></div>
+              <div><dt>Industry</dt><dd>$299</dd></div>
+              <div><dt>Deadline</dt><dd>Registration is capped at 60 and closes on DATE (firm). No refunds after DATE.</dd></div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-<p>14:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_4_Alex.pdf" target="_blank">Designing Human-AI Collaboration: A Sufficient-Statistic Approach</a>
-<br>Presenter: Alex Moehring (Purdue)
-<br>Discussant: Sam Goldberg (Stanford)
+  <section class="block" id="travel">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Practical information</div>
+        <h2>Travel, accommodation and directions</h2>
+      </div>
+      <div class="travel prose">
+        <h4>Travel to San Diego</h4>
+        <ol>
+          <li><a href="https://www.southwest.com/" target="_blank" rel="noopener">Southwest Airlines</a> operates the most flights to/from San Diego (airport code: SAN) but requires a separate fare search.</li>
+          <li>Travelers within Southern California may consider the Pacific Surfliner. Consult <a href="https://www.pacificsurfliner.com/plan-your-trip/alerts/travel-advisories/" target="_blank" rel="noopener">PacificSurfliner.com</a> for travel advisories or closures due to cliffside erosion. We recommend the Solana Beach stop with a rideshare to campus.</li>
+        </ol>
+        <h4>Accommodation</h4>
+        <p>There is no designated hotel for the workshop. We recommend booking early.</p>
+        <ol>
+          <li>For those who prefer rideshare services, we recommend the <a href="https://www.hilton.com/en/hotels/santphh-hilton-la-jolla-torrey-pines/" target="_blank" rel="noopener">Hilton La Jolla Torrey Pines</a>, as it's reasonably priced and nearby (1.2 miles / 1.9 km).</li>
+          <li>For those who prefer public transit and walking, we recommend the <a href="https://www.marriott.com/en-us/hotels/lajca-residence-inn-san-diego-la-jolla/overview/" target="_blank" rel="noopener">Residence Inn by Marriott</a> or the <a href="https://www.marriott.com/en-us/hotels/sanjs-sheraton-la-jolla-hotel/overview/" target="_blank" rel="noopener">Sheraton La Jolla</a>. They are about 30 minutes walk from the workshop venue, mostly across campus, and 10-15 minutes walk from the Nobel Drive trolley station.</li>
+          <li>The nearest and highest-quality choice is <a href="https://www.estancialajolla.com" target="_blank" rel="noopener">Estancia La Jolla</a>, a 10-minute walk. However, it is relatively expensive. Similar alternatives include the <a href="https://www.ljbtc.com/" target="_blank" rel="noopener">La Jolla Beach &amp; Tennis Club</a> and the <a href="https://www.lodgetorreypines.com/" target="_blank" rel="noopener">Lodge at Torrey Pines</a>.</li>
+        </ol>
+        <h4>Arriving at UCSD</h4>
+        <ol>
+          <li>The workshop will be held at the UCSD Rady School of Management at <a href="https://goo.gl/maps/zYF3oWQShJW6RHwm6" target="_blank" rel="noopener">5 Scholars Drive North</a>. We recommend taxi, ride share or walking as campus parking availability can be unpredictable.</li>
+          <li>The UC San Diego Trolley Blue Line connects UCSD to Downtown San Diego near the airport. Trolleys run every 15 minutes and fares can be paid on the <a href="https://www.sdmts.com/fares/pronto" target="_blank" rel="noopener">PRONTO app</a>. We recommend using the trolley with two caveats. The UCSD Pepper Canyon stop is a 20-minute walk from the Rady School, including a hill. The trolley is usually busy and reasonably safe, but off-peak ridership can be unpredictable. The trolley does not run to the airport directly, but the Middletown Trolley Station is only a short walk from the airport's free Rental Car Shuttle stop at Admiral Boland Way, <a href="https://www.san.org/to-from/Public-Transportation#117819-trolley-service" target="_blank" rel="noopener">as described here</a>.</li>
+          <li>Driving directions to the Rady School are <a href="https://rady.ucsd.edu/connect/visit/index.html" target="_blank" rel="noopener">here</a>. UCSD Visitor Parking information is <a href="https://transportation.ucsd.edu/visit/visitor/index.html" target="_blank" rel="noopener">here</a>. Parking may require search across multiple parking lots.</li>
+          <li>There is free parking in an unpaved lot at the <a href="https://goo.gl/maps/D4h5iYWuzzP59WFe7" target="_blank" rel="noopener">Torrey Pines Gliderport</a>, a 15-minute walk to the workshop site. However, the lot is popular and may be full.</li>
+        </ol>
+        <h4>Navigating within the Rady School</h4>
+        <ol>
+          <li>Workshop coffee, registration, lunches, and luggage storage will be in MPR1, in the southwest corner of the Rady courtyard on the 1st floor. This room will remain staffed during workshop presentations.</li>
+          <li>Workshop sessions will take place in 1E106, on the first floor of the Rady building furthest from the ocean. The room will not remain staffed between presentations.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
-<p>15:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_54_YuSong.pdf" target="_blank">Optimizing Multi-Stage Personalization in the Customer Journey</a>
-<br>Presenter: Yu Song (U. of Michigan)
-<br>Discussant: Joel Persson (Spotify)
+  ================= END HIDDEN 2027 SECTIONS ================= -->
 
-<p>16:00 : Break
+  <!-- ================= PAST WORKSHOPS ================= -->
+  <section class="block" id="past">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Archive</div>
+        <h2>Past workshops</h2>
+        <p>Programs, accepted papers, talk recordings and program committees for every edition. Tap a year to expand.</p>
+      </div>
 
-<p>16:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_77_Malika.pdf" target="_blank">Ranking Algorithms and Equilibrium Prices</a>
-<br>Presenter: Malika Korganbekova (U. of Chicago)
-<br>Discussant: Song Yao (WUSTL)
+      <!-- ~~~~~~~~~~ 2026 ~~~~~~~~~~ -->
+      <details class="panel" id="wopa2026">
+        <summary>
+          <span class="year">2026</span>
+          <span class="summary-text"><strong>April 24&ndash;25, 2026 &middot; UC San Diego</strong><span>10 papers &middot; Program, papers and program committee</span></span>
+          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <div class="panel-body">
+          <h4 class="day">Friday, April 24, 2026</h4>
+          <ol class="schedule">
+            <li><time>9:00</time><div class="note">Coffee, breakfast snacks</div></li>
+            <li><time>10:15</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_67_Shunto.pdf" target="_blank" rel="noopener">Can Privacy Technologies Replace Cookies? Ad Revenue in a Field Experiment</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Shunto Kobayashi</b> (Boston U.)</span><span><span class="role">Discussant</span>Yanwen Wang (UBC)</span></div>
+            </div></li>
+            <li><time>11:15</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_13_Ali.pdf" target="_blank" rel="noopener">Long or Short? Personalizing Ad Length and Frequency</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Ali Goli</b> (U. of Rochester)</span><span><span class="role">Discussant</span>Mingyu Joo (UC Riverside)</span></div>
+            </div></li>
+            <li><time>12:30</time><div class="note">Lunch</div></li>
+            <li><time>14:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_4_Alex.pdf" target="_blank" rel="noopener">Designing Human-AI Collaboration: A Sufficient-Statistic Approach</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Alex Moehring</b> (Purdue)</span><span><span class="role">Discussant</span>Sam Goldberg (Stanford)</span></div>
+            </div></li>
+            <li><time>15:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_54_YuSong.pdf" target="_blank" rel="noopener">Optimizing Multi-Stage Personalization in the Customer Journey</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Yu Song</b> (U. of Michigan)</span><span><span class="role">Discussant</span>Joel Persson (Spotify)</span></div>
+            </div></li>
+            <li><time>16:00</time><div class="note">Break</div></li>
+            <li><time>16:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_77_Malika.pdf" target="_blank" rel="noopener">Ranking Algorithms and Equilibrium Prices</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Malika Korganbekova</b> (U. of Chicago)</span><span><span class="role">Discussant</span>Song Yao (WUSTL)</span></div>
+            </div></li>
+            <li><time>18:00</time><div class="note">Dinner at the Bella (vegan option: tacos de nopal, mini churros)</div></li>
+          </ol>
 
-<p>18:00 : Dinner at the Bella. (Vegan option: Tacos de nopal, mini churros)
+          <h4 class="day">Saturday, April 25, 2026</h4>
+          <ol class="schedule">
+            <li><time>8:30</time><div class="note">Coffee, breakfast snacks</div></li>
+            <li><time>9:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_70_Tal.pdf" target="_blank" rel="noopener">How Short-Term Rental Regulations Reshape Urban Spending: Evidence from New York City's Restaurant Industry</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Tal Shoshani</b> (USC)</span><span><span class="role">Discussant</span>Meng Liu (WUSTL)</span></div>
+            </div></li>
+            <li><time>10:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_44_TaiLam.pdf" target="_blank" rel="noopener">The Impact of LLM Adoption on Online User Behavior</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>H. Tai Lam</b> (UCLA)</span><span><span class="role">Discussant</span>Tommaso Bondi (Cornell)</span></div>
+            </div></li>
+            <li><time>11:45</time><div class="note">Lunch</div></li>
+            <li><time>13:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_71_Omid.pdf" target="_blank" rel="noopener">Auctions Meet Bandits: An Empirical Analysis</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Omid Rafieian</b> (Cornell)</span><span><span class="role">Discussant</span>Ron Berman (U. of Pennsylvania)</span></div>
+            </div></li>
+            <li><time>14:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_84_LenaSong.pdf" target="_blank" rel="noopener">The Influence of the Vocal Minority: Evidence from Social Media Comments</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Lena Song</b> (UIUC)</span><span><span class="role">Discussant</span>Yiting Deng (UCL)</span></div>
+            </div></li>
+            <li><time>15:00</time><div class="note">Break</div></li>
+            <li><time>15:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_73_Helen.pdf" target="_blank" rel="noopener">Can Increased Platform Liability Reduce Sex Trafficking? Evidence from the Price Effect</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Helen Zeng</b> (UC Davis)</span><span><span class="role">Discussant</span>Yi Liu (U. of Wisconsin)</span></div>
+            </div></li>
+            <li><time>16:45</time><div class="note">Workshop conclusion, optional walk to gliderport for sunset/dinner/drinks at own expense. Be advised of wind and uneven terrain. Tandem flights available onsite.</div></li>
+          </ol>
 
-<p><u>Saturday, April 25, 2026</u><p>
-
-<p>8:30 : Coffee, breakfast snacks
-
-<p>9:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_70_Tal.pdf" target="_blank">How Short-Term Rental Regulations Reshape Urban Spending: Evidence from New York City's Restaurant Industry</a>
-<br>Presenter: Tal Shoshani (USC)
-<br>Discussant: Meng Liu (WUSTL)
-
-<p>10:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_44_TaiLam.pdf" target="_blank">The Impact of LLM Adoption on Online User Behavior</a>
-<br>Presenter: H. Tai Lam (UCLA)
-<br>Discussant: Tommaso Bondi (Cornell)
-
-<p>11:45 : Lunch
-
-<p>13:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_71_Omid.pdf" target="_blank">Auctions Meet Bandits: An Empirical Analysis</a>
-<br>Presenter: Omid Rafieian (Cornell)
-<br>Discussant: Ron Berman (U. of Pennsylvania)
-  
-<p>14:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_84_LenaSong.pdf" target="_blank">The Influence of the Vocal Minority: Evidence from Social Media Comments</a>
-<br>Presenter: Lena Song (UIUC)
-<br>Discussant: Yiting Deng (UCL)
-
-<p>15:00 : Break
-
-<p>15:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_73_Helen.pdf" target="_blank">Can Increased Platform Liability Reduce Sex Trafficking? Evidence from the Price Effect</a>
-<br>Presenter: Helen Zeng (UC Davis)
-<br>Discussant: Yi Liu (U. of Wisconsin)
-
-<p>16:45 : Workshop conclusion, optional walk to gliderport for sunset/dinner/drinks at own expense. Be advised of wind and uneven terrain. Tandem flights available onsite.
-
-</details>
-<p>
-<details id="2026reg">
-  <summary>
-    <b>2026 WoPA Registration</b></summary>
-    <p>
-      All attendees must register. Registration fees primarily go toward catering expenses.  
-<p>
-      <a href="https://events.blackthorn.io/en/6A1uwY6/2026-workshop-on-platform-analytics-5a3gVs1o6eL/overview" target="_blank">Registration is available here.</a>  Please contact <a href="mailto:jthiel@ucsd.edu" target="_blank">Jana</a> in case of difficulties, questions or refunds. 
-      <p>
-      Fees: <br>$99 doctoral students and postdocs,<br> $199 faculty and non-profits,<br> $299 industry.<br> Registration is capped at 60, and will close on April 10 (firm). No refunds after April 10.
-      <p>
-        Registration includes lunch both days and dinner on April 4, including vegetarian and vegan options.
-<p>
-    WoPA is an in-person event with no online or hybrid attendance option. We intend to post talk videos on <a href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank">the WoPA YouTube channel</a> after the workshop.      
-  </details>
-    <p> 
-
-      <details>
-  <summary>
-    <b>Travel, Accommodation, Directions, Navigation within Rady</b></summary>
-  <p>
-    <i>Travel to San Diego</i>
-    <p>
-    1. <a href="https://www.southwest.com/" target="_blank">Southwest Airlines</a> operates the most flights to/from San Diego (airport code: SAN) but requires a separate fare search.
-<p>
-     2. Travelers within Southern California may consider the Pacific Surfliner. Consult <a href="https://www.pacificsurfliner.com/plan-your-trip/alerts/travel-advisories/" target="_blank">PacificSurfliner.com</a> for travel advisories or closures due to cliffside erosion. We recommend the Solana Beach stop with a rideshare to campus.
-<p>
-    <i>Accommodation</i> 
-  <p>
-There is no designated hotel for the workshop. We recommend booking early.
-    <p>
-      1. For those who prefer rideshare services, we recommend the <a href="https://www.hilton.com/en/hotels/santphh-hilton-la-jolla-torrey-pines/" target="_blank">Hilton La Jolla Torrey Pines</a>,
-    as it's reasonably priced and nearby (1.2 miles / 1.9 km). 
-      <p>
-      2. For those who prefer public transit and walking, we recommend the 
-        <a href="https://www.marriott.com/en-us/hotels/lajca-residence-inn-san-diego-la-jolla/overview/" target="_blank">
-          Residence Inn by Marriott</a> or the 
-      <a href="https://www.marriott.com/en-us/hotels/sanjs-sheraton-la-jolla-hotel/overview/" target="_blank">
-        Sheraton La Jolla</a>. They are about 30 minutes walk from the workshop venue, mostly across campus, and 10-15 minutes walk from the Nobel Drive trolley station.
-  <p>
-  3. The nearest and highest-quality choice is <a href="https://www.estancialajolla.com" target="_blank">
-    Estancia La Jolla</a>, a 10-minute walk. However, it is relatively expensive. 
- Similar alternatives include the 
-  <a href="https://www.ljbtc.com/" target="_blank">La Jolla Beach & Tennis Club</a> 
-  and the 
-  <a href="https://www.lodgetorreypines.com/" target="_blank">Lodge at Torrey Pines</a>.
-  <p>
-    <i>Arriving at UCSD</i>
-<p>
-  1. The workshop will be held at the UCSD Rady School of Management at <a href="https://goo.gl/maps/zYF3oWQShJW6RHwm6" target="_blank">5 Scholars Drive North</a>. We recommend taxi, ride share or walking as campus parking availability can be unpredictable. 
-    <p>
-  2. The UC San Diego Trolley Blue Line connects UCSD to Downtown San Diego near the airport. Trolleys run every 15 minutes and fares can be paid on the <a href="https://www.sdmts.com/fares/pronto" target="_blank">PRONTO app</a>. We recommend using the trolley with two caveats. The UCSD Pepper Canyon stop is a 20-minute walk from the Rady School, including a hill. The trolley is usually busy and reasonably safe, but off-peak ridership can be unpredictable. 
-      The trolley does not run to the airport directly, but the Middletown Trolley Station is only a short walk from the airport's free Rental Car Shuttle stop at Admiral Boland Way, <a href="https://www.san.org/to-from/Public-Transportation#117819-trolley-service" target="_blank">as described here.</a>
-  <p>
-
-  <p>
-  3. Driving directions to the Rady School are <a href="https://rady.ucsd.edu/connect/visit/index.html" target="_blank">here</a>. UCSD Visitor Parking information is <a href="https://transportation.ucsd.edu/visit/visitor/index.html" target="_blank">here.</a> Parking may require search across multiple parking lots. 
-  <p>
-  4. There is free parking in an unpaved lot at the <a href="https://goo.gl/maps/D4h5iYWuzzP59WFe7" target="_blank">Torrey Pines Gliderport</a>, a 15-minute walk to the workshop site. However, the lot is popular and may be full.
-    <p>
-   <i>Navigating within the Rady School</i>
-<p>
-  1. Workshop coffee, registration, lunches, and luggage storage will be in MPR1, in the southwest corner of the Rady courtyard on the 1st floor. This room will remain staffed during workshop presentations.
-    <p>
-  2. Workshop sessions will take place in 1E106, on the first floor of the Rady building furthest from the ocean. The room will not remain staffed between presentations. 
-  <p>
-    </details>
-<p>      
-
-  
-     <details>       
-  <summary><b>2026 Call for Papers</b></summary>
-<p>
-The Workshop on Platform Analytics presents new scientific research on platform analytics. 
-<p>
-We invite new working papers on platform analytics for a competitive evaluation process. Most submissions will receive direct feedback from the program committee.
-<p>
-We welcome relevant submissions from government, industry or any academic discipline, including computer science, economics, information systems, marketing, operations or others.
-<p>
-The submission deadline is Dec. 4, 2025. The submission link is on Easychair: <a href="https://easychair.org/conferences/?conf=wopa2026" target="_blank">SUBMISSION LINK</a>
-  <p>
-We focus on new, unpublished work in the spirit of a workshop to help improve works in progress. We have limited reviewing resources and presentation slots. Therefore, we will only review or consider papers that are not published, not currently invited for revision by a journal, or were first posted online within the previous two years prior to the submission deadline. Additionally, we will not review more than one submission per submitting author. We thank you in advance for adhering to these rules, and welcome questions or comments.
-<p>
-The workshop is scheduled for April 24-25, 2026, at the University of California, San Diego. 
- <p>
+          <details class="sub" id="pc2026">
+            <summary>2026 Program Committee</summary>
+            <p class="thanks">We thank the Program Committee members. Their volunteer service makes this workshop possible.</p>
+            <ul class="people">
+            <li>Uttara Ananthakrishnan, Carnegie Mellon University</li>
+            <li>Guy Aridor, Northwestern Kellogg</li>
+            <li>Mimansa Bairathi, University College London</li>
+            <li>Shrabastee Banerjee, Tilburg University</li>
+            <li>Ron Berman, Wharton School, University of Pennsylvania</li>
+            <li>Shirsho Biswas, University of Washington</li>
+            <li>Ishita Chakraborty, University of Wisconsin Madison</li>
+            <li>Junhong Chu, Hong Kong University</li>
+            <li>Giovanni Compiani, University of Chicago</li>
+            <li>Ziwei Cong, Georgetown University</li>
+            <li>Tim Derdenger, Carnegie Mellon University</li>
+            <li>Yiting Deng, University College London</li>
+            <li>Dante Donati, Columbia Business School</li>
+            <li>Yaniv Dover, The Hebrew University</li>
+            <li>Limin Fang, Sauder School of Business</li>
+            <li>Richard Faltings, University of California San Diego</li>
+            <li>Jessica Fong, University of Michigan</li>
+            <li>Hortense Fong, Columbia University</li>
+            <li>Mohsen Foroughifar, Tepper School of Business, Carnegie Mellon University</li>
+            <li>Marita Freimane, University of Zurich</li>
+            <li>Samuel Goldberg, Stanford University</li>
+            <li>Ali Goli, University of Washington</li>
+            <li>Tong Guo, Duke University</li>
+            <li>Sherry He, Michigan State University</li>
+            <li>David Holtz, Columbia</li>
+            <li>Yufeng Huang, University of Rochester</li>
+            <li>Marat Ibragimov, Emory University</li>
+            <li>Mingyu Joo, University of California, Riverside</li>
+            <li>Aaron Kaye, Massachusetts Institute of Technology</li>
+            <li>Hülya Karaman, Singapore Management University</li>
+            <li>Anuj Kapoor, University of Missouri</li>
+            <li>Malika Korganbekova, The University of Chicago Booth School of Business</li>
+            <li>Tai Lam, University of California, Los Angeles</li>
+            <li>Poet Larsen, Harvard Business School</li>
+            <li>Jura Liaukonyte, Cornell University</li>
+            <li>Hui Li, The University of Hong Kong</li>
+            <li>Meng Liu, Washington University in St Louis</li>
+            <li>Yi Liu, University of Wisconsin - Madison</li>
+            <li>Fei Long, University of North Carolina at Chapel Hill</li>
+            <li>Leonardo Madio, University of Padua</li>
+            <li>Nikhil Malik, Marshall School of Business, USC</li>
+            <li>Emaad Manzoor, Cornell University</li>
+            <li>Daniel McCarthy, University of Maryland, College Park</li>
+            <li>Klaus Miller, HEC Paris</li>
+            <li>Sridhar Moorthy, University of Toronto</li>
+            <li>Unnati Narang, University of Illinois at Urbana Champaign</li>
+            <li>Sridhar Narayanan, Stanford University</li>
+            <li>Olivia Natan, UC Berkeley</li>
+            <li>Joel Persson, Spotify</li>
+            <li>Omid Rafieian, Cornell University</li>
+            <li>Imke Reimers, National Bureau of Economic Research</li>
+            <li>Michelangelo Rossi, HEC Paris</li>
+            <li>Ananya Sen, Carnegie Mellon University</li>
+            <li>Amandeep Singh, Wharton Business School</li>
+            <li>Siddhartha Sharma, Indiana University</li>
+            <li>Venkatesh Shankar, Texas A&M University</li>
+            <li>Maria Ana Vitorino, INSEAD</li>
+            <li>Madhu Viswanathan, Indian School of Business</li>
+            <li>Caio Waisman, Northwestern University</li>
+            <li>Yanwen Wang, University of British Columbia</li>
+            <li>Yang Wang, Amazon</li>
+            <li>Nils Wernerfelt, Northwestern University</li>
+            <li>Chunhua Wu, University of British Columbia</li>
+            <li>Xu Zhang, London Business School</li>
+            <li>Shunyuan Zhang, Harvard Business School</li>
+            <li>Kai Zhu, Bocconi University</li>
+            <li>Yingkang Xie, Washington University in St. Louis</li>
+            <li>Zikun Ye, University of Washington</li>
+            </ul>
+          </details>
+        </div>
       </details>
 
-  <details>
-  <summary><b>2026 WoPA Program Committee</b></summary>
-  <p>
-    We thank the Program Committee members. Their volunteer service makes this workshop possible.
-  <p>
-Uttara Ananthakrishnan, Carnegie Mellon University<br>
-Guy Aridor, Northwestern Kellogg<br>
-Mimansa Bairathi, University College London<br>
-Shrabastee Banerjee, Tilburg University<br>
-Ron Berman, Wharton School, University of Pennsylvania<br>
-Shirsho Biswas, University of Washington<br>
-Ishita Chakraborty, University of Wisconsin Madison<br>
-Junhong Chu, Hong Kong University<br>
-Giovanni Compiani, University of Chicago<br>
-Ziwei Cong, Georgetown University<br>
-Tim Derdenger, Carnegie Mellon University<br>
-Yiting Deng, University College London<br>
-Dante Donati, Columbia Business School<br>
-Yaniv Dover, The Hebrew University<br>
-Limin Fang, Sauder School of Business<br>
-Richard Faltings, University of California San Diego—<br>
-Jessica Fong, University of Michigan<br>
-Hortense Fong, Columbia University<br>
-Mohsen Foroughifar, Tepper School of Business, Carnegie Mellon University<br>
-Marita Freimane, University of Zurich
-Samuel Goldberg, Stanford University<br>
-Ali Goli, University of Washington<br>
-Tong Guo, Duke University<br>
-Sherry He, Michigan State University<br>
-David Holtz, Columbia<br>
-Yufeng Huang, University of Rochester<br>
-Marat Ibragimov, Emory University<br>
-Mingyu Joo, University of California, Riverside<br>
-Aaron Kaye, Massachusetts Institute of Technology<br>
-Hülya Karaman, Singapore Management University<br>
-Anuj Kapoor, University of Missouri<br>
-Malika Korganbekova, The University of Chicago Booth School of Business<br>
-Tai Lam, University of California, Los Angeles<br>
-Poet Larsen, Harvard Business School<br>
-Jura Liaukonyte, Cornell University<br>
-Hui Li, The University of Hong Kong<br>
-Meng Liu, Washington University in St Louis<br>
-Yi Liu, University of Wisconsin - Madison<br>
-Fei Long, University of North Carolina at Chapel Hill<br>
-Leonardo Madio, University of Padua<br>
-Nikhil Malik, Marshall School of Business, USC<br>
-Emaad Manzoor, Cornell University<br>
-Daniel McCarthy, University of Maryland, College Park<br>
-Klaus Miller, HEC Paris<br>
-Sridhar Moorthy, University of Toronto<br>
-Unnati Narang, University of Illinois at Urbana Champaign<br>
-Sridhar Narayanan, Stanford University<br>
-Olivia Natan, UC Berkeley<br>
-Joel Persson, Spotify<br>
-Omid Rafieian, Cornell University<br>
-Imke Reimers, National Bureau of Economic Research<br>
-Michelangelo Rossi, HEC Paris<br>
-Ananya Sen, Carnegie Mellon University<br>
-Amandeep Singh, Wharton Business School<br>
-Siddhartha Sharma, Indiana University<br>
-Venkatesh Shankar, Texas A&M University<br>
-Maria Ana Vitorino, INSEAD<br>
-Madhu Viswanathan, Indian School of Business<br>
-Caio Waisman, Northwestern University<br>
-Yanwen Wang, University of British Columbia<br>
-Yang Wang, Amazon<br>
-Nils Wernerfelt, Northwestern University<br>
-Chunhua Wu, University of British Columbia<br>
-Xu Zhang, London Business School<br>
-Shunyuan Zhang, Harvard Business School<br>
-Kai Zhu, Bocconi University<br>
-Yingkang Xie, Washington University in St. Louis<br>
-Zikun Ye, University of Washington<br>
-Nathan Yang, University of Illinois, Urbana-Champaign<br>
-Song Yao, Washington University in St. Louis<br>
-  <p>
-</details>
-  <p>
-<details>
-  <summary>
-    <b>2025 Archive: Program, Papers, Program Committee</b></summary>
-  <p>
+      <!-- ~~~~~~~~~~ 2025 ~~~~~~~~~~ -->
+      <details class="panel" id="wopa2025">
+        <summary>
+          <span class="year">2025</span>
+          <span class="summary-text"><strong>April 4&ndash;5, 2025 &middot; UC San Diego</strong><span>10 papers &middot; Program, papers and program committee</span></span>
+          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <div class="panel-body">
+          <h4 class="day">Friday, April 4, 2025</h4>
+          <ol class="schedule">
+            <li><time>9:00</time><div class="note">Coffee, breakfast snacks</div></li>
+            <li><time>10:15</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20faltings%20-%20pricing%20the%20right%20to%20renege.pdf" target="_blank" rel="noopener">Pricing the Right to Renege in Search Markets: Evidence from Trucking</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Richard Faltings</b> (UT Austin)</span><span><span class="role">Discussant</span>Yingkang Xie (WUSTL)</span></div>
+            </div></li>
+            <li><time>11:15</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20freimane%20-%20gender%20bias,%20feedback,%20productivity.pdf" target="_blank" rel="noopener">Gender Bias, Feedback, and Productivity</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Marita Freimane</b> (Zurich)</span><span><span class="role">Discussant</span>Meng Liu (WUSTL)</span></div>
+            </div></li>
+            <li><time>12:30</time><div class="note">Lunch</div></li>
+            <li><time>14:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20yu%20-%20welfare%20effects%20of%20sponsored%20product%20advertising.pdf" target="_blank" rel="noopener">The Welfare Effects of Sponsored Product Advertising</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Chuan Yu</b> (HBS)</span><span><span class="role">Discussant</span>Tai Lam (UCLA)</span></div>
+            </div></li>
+            <li><time>15:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20kaye%20-%20welfare%20effects%20of%20personalized%20recommendations.pdf" target="_blank" rel="noopener">The Personalization Paradox: Welfare Effects of Personalized Recommendations in Two-Sided Digital Markets</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Aaron Kaye</b> (MIT)</span><span><span class="role">Discussant</span>Giovanni Compiani (Chicago)</span></div>
+            </div></li>
+            <li><time>16:00</time><div class="note">Break</div></li>
+            <li><time>16:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20gandhi%20et%20al%20-%20eqm%20effects%20of%20fake%20reviews%20on%20amazon.pdf" target="_blank" rel="noopener">Misinformation and Mistrust: The Equilibrium Effects of Fake Reviews on Amazon.com</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Ashvin Gandhi</b> (UCLA)</span><span><span class="role">Discussant</span>Malika Korganbekova (Chicago)</span></div>
+            </div></li>
+            <li><time>17:30</time><div>
+              <span class="talk-title">Platform Papers: State of the Literature</span>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Joost Rietveld</b> (UCL)</span></div>
+            </div></li>
+            <li><time>18:00</time><div class="note">Dinner at Ridgewalk Social</div></li>
+          </ol>
 
-<p><u>Friday, April 4, 2025</u>
+          <h4 class="day">Saturday, April 5, 2025</h4>
+          <ol class="schedule">
+            <li><time>8:30</time><div class="note">Coffee, breakfast snacks</div></li>
+            <li><time>9:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20farronato%20et%20al%20-%20data%20sharing%20and%20website%20competition.pdf" target="_blank" rel="noopener">Data Sharing and Website Competition: The Role of Dark Patterns</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Chiara Farronato</b> (HBS)</span><span><span class="role">Discussant</span>Song Yao (WUSTL)</span></div>
+            </div></li>
+            <li><time>10:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20zhao%20berman%20-%20algorithmic%20collusion%20of%20pricing%20and%20advertising.pdf" target="_blank" rel="noopener">Algorithmic Collusion of Pricing and Advertising on E-commerce Platforms</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Hangcheng Zhao</b> (U-Penn.)</span><span><span class="role">Discussant</span>Sridhar Moorthy (Toronto)</span></div>
+            </div></li>
+            <li><time>11:45</time><div class="note">Lunch</div></li>
+            <li><time>13:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20larsen%20proserpio%20-%20information%20signals%20in%20sponsored%20search.pdf" target="_blank" rel="noopener">Information Signals in Sponsored Search: Evidence from Google&rsquo;s BERT</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Poet Larsen</b> (USC)</span><span><span class="role">Discussant</span>Olivia Natan (UC Berkeley)</span></div>
+            </div></li>
+            <li><time>14:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20fang%20et%20al%20-%20unraveling%20review%20polarization%20via%20llms.pdf" target="_blank" rel="noopener">Shifting Standards or Changing Preferences? Unraveling Review Polarization via LLMs</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Limin Fang</b> (UBC)</span><span><span class="role">Discussant</span>Tong Guo (Duke)</span></div>
+            </div></li>
+            <li><time>15:00</time><div class="note">Break</div></li>
+            <li><time>15:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20mosaffa%20et%20al%20-%20Visual%20Polarization%20Measurement%20Using%20Counterfactual%20Image%20Generation.pdf" target="_blank" rel="noopener">Visual Polarization Measurement Using Counterfactual Image Generation</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Omid Rafieian</b> (Cornell)</span><span><span class="role">Discussant</span>David Holtz (UC Berkeley)</span></div>
+            </div></li>
+            <li><time>16:45</time><div class="note">Workshop conclusion, optional walk to gliderport for sunset/dinner/drinks at own expense. Be advised of wind and uneven terrain. Tandem flights available onsite.</div></li>
+          </ol>
 
-
-<p>9:00 : Coffee, breakfast snacks
-
-<p>10:15 :  <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20faltings%20-%20pricing%20the%20right%20to%20renege.pdf" target="_blank">
-  Pricing the Right to Renege in Search Markets: Evidence from Trucking</a>
-<br>Presenter: Richard Faltings (UT Austin)
-<br>Discussant: Yingkang Xie (WUSTL)
-
-<p>11:15 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - freimane - gender bias, feedback, productivity.pdf" target="_blank">
-  Gender Bias, Feedback, and Productivity</a>
-<br>Presenter: Marita Freimane (Zurich)
-<br>Discussant: Meng Liu (WUSTL)
-
-<p>12:30 : Lunch
-
-<p>14:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - yu - welfare effects of sponsored product advertising.pdf" target="_blank">
-  The Welfare Effects of Sponsored Product Advertising</a>
-<br>Presenter: Chuan Yu (HBS)
-<br>Discussant: Tai Lam (UCLA)
-
-<p>15:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - kaye - welfare effects of personalized recommendations.pdf" target="_blank">
-  The Personalization Paradox: Welfare Effects of Personalized Recommendations in Two-Sided Digital Markets</a>
-<br>Presenter: Aaron Kaye (MIT)
-<br>Discussant: Giovanni Compiani (Chicago)
-
-<p>16:00 : Break
-
-<p>16:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - gandhi et al - eqm effects of fake reviews on amazon.pdf" target="_blank">
-  Misinformation and Mistrust: The Equilibrium Effects of Fake Reviews on Amazon.com</a>
-<br>Presenter: Ashvin Gandhi (UCLA)
-<br>Discussant: Malika Korganbekova (Chicago)
-
-<p>17:30 : Platform Papers: State of the Literature
-<br>Presenter: Joost Rietveld (UCL)
-
-<p>18:00 : Dinner at Ridgewalk Social
-
-  
-<p><u>Saturday, April 5, 2025  </u><p>
-
-<p>8:30 : Coffee, breakfast snacks
-
-<p>9:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - farronato et al - data sharing and website competition.pdf" target="_blank">
-  Data Sharing and Website Competition: The Role of Dark Patterns</a>
-<br>Presenter: Chiara Farronato (HBS)
-<br>Discussant: Song Yao (WUSTL)
-
-<p>10:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - zhao berman - algorithmic collusion of pricing and advertising.pdf" target="_blank">
-  Algorithmic Collusion of Pricing and Advertising on E-commerce Platforms</a>
-<br>Presenter: Hangcheng Zhao (U-Penn.)
-<br>Discussant: Sridhar Moorthy (Toronto)
-
-<p>11:45 : Lunch
-
-<p>13:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - larsen proserpio - information signals in sponsored search.pdf" target="_blank">
-  Information Signals in Sponsored Search: Evidence from Google’s BERT</a>
-<br>Presenter: Poet Larsen (USC)
-<br>Discussant: Olivia Natan (UC Berkeley)
-
-<p>14:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - fang et al - unraveling review polarization via llms.pdf" target="_blank">
-  Shifting Standards or Changing Preferences? Unraveling Review Polarization via LLMs</a>
-<br>Presenter: Limin Fang (UBC)
-<br>Discussant: Tong Guo (Duke)
-
-<p>15:00 : Break
-
-<p>15:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025 - mosaffa et al - Visual Polarization Measurement Using Counterfactual Image Generation.pdf" target="_blank">
-  Visual Polarization Measurement Using Counterfactual Image Generation</a>
-<br>Presenter: Omid Rafieian (Cornell)
-<br>Discussant: David Holtz (UC Berkeley)
-
-<p>16:45 : Workshop conclusion, optional walk to gliderport for sunset/dinner/drinks at own expense. Be advised of wind and uneven terrain. Tandem flights available onsite. 
-
-
-<details>
-  <summary>
-    <b>2025 WoPA Program Committee</b></summary>
-
-<p>
-  We thank the Program Committee members. Their volunteer service makes this workshop possible.
-<p>
-<a href="https://https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.andrew.cmu.edu/user/umadurai" target="_blank">Uttara Ananthakrishnan</a>, Carnegie Mellon University <br>
-<a href="https://www.guyaridor.net" target="_blank">Guy Aridor</a>, Northwestern Kellogg<br>
-<a href="https://https://mimansabairathi.github.io/" target="_blank">Mimansa Bairathi</a>, University College London School of Management <br>
-<a href="https://sites.google.com/view/shrabastee " target="_blank">Shrabastee Banerjee</a>, Tilburg University <br>
-<a href="https://www.tommasobondi.com" target="_blank">Tommaso Bondi</a>, Cornell Tech<br>
-<a href="https://luiscabral.net" target="_blank">Luís Cabral</a>, New York University<br>
-<a href="https://https://sites.google.com/view/ishitachakraborty" target="_blank">Ishita Chakraborty</a>, UW Madison<br>
-<a href="https://https://olin.wustl.edu/faculty/tat-chan" target="_blank">Tat Chan</a>, Washington University in St Louis<br>
-<a href="https://www.chujunhong.com" target="_blank">Junhong Chu</a>, The University of Hong Kong<br>
-<a href="https://https://www.giovannicompiani.com/" target="_blank">Giovanni Compiani</a>, University of Chicago<br>
-<a href="https://https://www.mgmt.ucl.ac.uk/people/yitingdeng" target="_blank">Yiting Deng</a>, University College London<br>
-<a href="https://https://www.andrew.cmu.edu/user/derdenge/" target="_blank">Tim Derdenger</a>, Carnegie Mellon University<br>
-<a href="https://https://sites.google.com/site/dantedonatiphd" target="_blank">Dante Donati</a>, Columbia University<br>
-<a href="https://https://robdonnelly.me/" target="_blank">Rob Donnelly</a>, OpenAI<br>
-<a href="https://https://www.linkedin.com/in/yaniv-dover-1615643/" target="_blank">Yaniv Dover</a>, The Hebrew University Business School<br>
-<a href="https://https://sites.google.com/site/chiarafarronato/" target="_blank">Chiara Farronato</a>, Harvard University<br>
-<a href="https://www.jessica-fong.com" target="_blank">Jessica Fong</a>, University of Michigan<br>
-<a href="https://bethfossen.com" target="_blank">Beth Fossen</a>, Indiana University<br>
-<a href="https://www.andreyfradkin.com" target="_blank">Andrey Fradkin</a>, Boston University<br>
-<a href="https://https://www.gsb.stanford.edu/faculty-research/faculty/samuel-goldberg" target="_blank">Samuel Goldberg</a>, Stanford University<br>
-<a href="https://https://faculty.washington.edu/agoli/" target="_blank">Ali Goli</a>, University of Washington <br>
-<a href="https://https://people.duke.edu/~tg64" target="_blank">Tong Guo</a>, Duke University<br>
-<a href="https://https://www.sherryhe.com/" target="_blank">Sherry He</a>, Michigan State University<br>
-<a href="https://bretthollenbeck.com" target="_blank">Brett Hollenbeck</a>, UCLA Anderson School of Management<br>
-<a href="https://https://www.daveholtz.net/" target="_blank">David Holtz</a>, University of California, Berkeley<br>
-<a href="https://justinthuang.com" target="_blank">Justin Huang</a>, University of Michigan<br>
-<a href="https://https://sites.google.com/site/yufenghuangphd" target="_blank">Yufeng Huang</a>, University of Rochester<br>
-<a href="https://www.xiang-hui.org" target="_blank">Xiang Hui</a>, Washington University in St. Louis<br>
-<a href="https://https://goizueta.emory.edu/faculty/profiles/marat-ibragimov" target="_blank">Marat Ibragimov</a>, Emory University<br>
-<a href="https://https://marketing.wharton.upenn.edu/profile/zhenling/" target="_blank">Zhenling Jiang</a>, University of Pennsylvania <br>
-<a href="https://https://www.malikakorganbekova.com/" target="_blank">Malika Korganbekova</a>, The University of Chicago Booth School of Business<br>
-<a href="https://https://www.htailam.com/" target="_blank">Tai Lam</a>, UCLA<br>
-<a href="https://https://sites.google.com/view/huilicatherine" target="_blank">Hui Li</a>, The University of Hong Kong<br>
-<a href="https://http://www.juraliaukonyte.com/" target="_blank">Jura Liaukonyte</a>, Cornell University<br>
-<a href="https://https://business.wisc.edu/directory/profile/yi-liu/" target="_blank">Yi Liu</a>, University of Wisconsin - Madison<br>
-<a href="https://https://www.meng-liu.com/" target="_blank">Meng Liu</a>, Washington University in Saint Louis<br>
-<a href="https://https://sites.google.com/site/feilongfaye" target="_blank">Fei Long</a>, University of North Carolina at Chapel Hill<br>
-<a href="https://https://sites.google.com/view/nikhilmalik/home" target="_blank">Nikhil Malik</a>, USC<br>
-<a href="https://http://michiganross.umich.edu/faculty-research/faculty/puneet-manchanda" target="_blank">Puneet Manchanda</a>, University of Michigan<br>
-<a href="https://http://danielminhmccarthy.com/" target="_blank">Daniel McCarthy</a>, University of Maryland College Park<br>
-<a href="https://https://www.milanmiric.com/" target="_blank">Milan Miric</a>, University of Southern California<br>
-<a href="https://https://giesbusiness.illinois.edu/profile/unnati-narang" target="_blank">Unnati Narang</a>, UIUC<br>
-<a href="https://https://www.gsb.stanford.edu/faculty-research/faculty/sridhar-narayanan" target="_blank">Sridhar Narayanan</a>, Stanford University<br>
-<a href="https://https://sites.google.com/view/olivianatan/home" target="_blank">Olivia Natan</a>, UC Berkeley<br>
-<a href="https://https://www.joel-persson.com/" target="_blank">Joel Persson</a>, Spotify Research<br>
-<a href="https://https://omidraf.github.io/" target="_blank">Omid Rafieian</a>, Cornell Tech<br>
-<a href="https://www.johnson.cornell.edu" target="_blank">Vithala Rao</a>, Cornell University<br>
-<a href="https://https://imkereimers.weebly.com/" target="_blank">Imke Reimers</a>, Cornell University<br>
-<a href="https://https://michelangelorossi.github.io/" target="_blank">Michelangelo Rossi</a>, Télécom Paris, Institut Polytechnique de Paris<br>
-<a href="https://https://faculty.washington.edu/aminsa/" target="_blank">Amin Sayedi</a>, University of Washington<br>
-<a href="https://www.dschweidel.com" target="_blank">David Schweidel</a>, Emory University<br>
-<a href="https://https://sites.google.com/view/ananyasen/home" target="_blank">Ananya Sen</a>, Carnegie Mellon University<br>
-<a href="https://http://www.venkyshankar.com" target="_blank">VENKY SHANKAR</a>, SOUTHERN METHODIST UNIVERSITY<br>
-<a href="https://https://www.andreysimonov.com" target="_blank">Andrey Simonov</a>, Columbia University<br>
-<a href="https://https://parksinchaisri.github.io" target="_blank">Park Sinchaisri</a>, University of California, Berkeley<br>
-<a href="https://https://olin.wustl.edu/faculty/zijun-tian" target="_blank">Zijun Tian</a>, Washington University in St. Louis<br>
-<a href="https://https://cwaisman.github.io/" target="_blank">Caio Waisman</a>, Northwestern University<br>
-<a href="https://https://www.gsb.stanford.edu/faculty-research/faculty/yuyan-wang" target="_blank">Yuyan Wang</a>, Stanford University<br>
-<a href="https://https://www.sauder.ubc.ca/people/yanwen-wang" target="_blank">Yanwen Wang</a>, University of British Columbia<br>
-<a href="https://https://sites.google.com/view/nilswernerfelt/home" target="_blank">Nils Wernerfelt</a>, Northwestern University<br>
-<a href="https://https://olin.wustl.edu/faculty/yingkang-xie" target="_blank">Yingkang Xie</a>, Washington University in St. Louis<br>
-<a href="https://https://carlsonschool.umn.edu/faculty/linli-xu" target="_blank">Linli Xu</a>, University of Minnesota<br>
-<a href="https://www.songyao.org" target="_blank">Song Yao</a>, Washington University in St. Louis<br>
-<a href="https://https://faculty.washington.edu/hemay/" target="_blank">Hema Yoganarasimhan</a>, University of Washington<br>
-<a href="https://https://xu-zhang.com/" target="_blank">Xu Zhang</a>, London Business School<br>
-<a href="https://https://www.hbs.edu/faculty/Pages/profile.aspx?facId=1175206&click=byline" target="_blank">Shunyuan Zhang</a>, Harvard University<br>
-<a href="https://https://www.rhsmith.umd.edu/directory/bo-bobby-zhou" target="_blank">Bobby Zhou</a>, University of Maryland<br>
-<a href="https://https://kaizhu.me/" target="_blank">Kai Zhu</a>, Bocconi University<br>
-  <p>
-</details>
-
-  <p>
-</details>
-  <p>
-      <details>
-  <summary><b>2024 Archive: Program, Papers, Program Committee</b> </summary>
-       <p>
-             <u>Saturday, April 6, 2024</u>
- <p>
-   9:00 : Coffee, light breakfast
-    <p>
-    9:45 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 hui designing quality certificates on ebay.pdf" target="_blank">
-    Designing Quality Certificates: Insights from eBay	</a> 
-    <br>Presented by Xiang Hui, WUSTL
-    <br>Discussant: Tommaso Bondi, Cornell
-    <br><a href="https://www.youtube.com/watch?v=6Zu8ADX_EHY" target="_blank">Session archive on YouTube</a>
-  <p>
-
-    11:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 reimers detection, measurement, welfare anlaysis of platform bias.pdf" target="_blank">
-    A Framework for Detection, Measurement, and Welfare Analysis of Platform Bias</a> 
-    <br>Presented by Imke Reimers, Cornell
-    <br>Discussant: Dante Donati, Columbia
-    <br><a href="https://www.youtube.com/watch?v=A7ioonPuBks" target="_blank">Session archive on YouTube</a>
-         <p>
-   12:00 : Lunch, UCSD Faculty Club
-<p>
-
-    13:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 malik algo failures and consumer response on zillow.pdf" target="_blank">
-    Algorithm failures and consumers’ response: Evidence from Zillow</a> 
-    <br>Presented by Nikhil Malik, USC
-    <br>Discussant: Puneet Manchanda, Michigan
-    <br><a href="https://www.youtube.com/watch?v=v8hGoF432VA" target="_blank">Session archive on YouTube</a>
-  <p>
-
-    14:45 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 mummalaneni et al, how do content producers respond to engagement.pdf" target="_blank">
-    How Do Content Producers Respond to Engagement on Social Media Platforms?</a> 
-    <br>Presented by Simha Mummalaneni, Washington
-    <br>Discussant: Linli Xu, Minnesota
-    <br><a href="https://www.youtube.com/watch?v=r_wiDSJuKdw" target="_blank">Session archive on YouTube</a>
-
-   <p>
-   16:00 : Refreshment
-<p>
-
-    16:40 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 banerjee platform monetization on goodreads.pdf" target="_blank">
-    Unintended Consequences of Platform Monetization on Digital Cultural Markets: Evidence from a Natural Experiment on Goodreads</a> 
-    <br>Presented by Shrabastee Banerjee, Tilburg
-    <br>Discussant: Unnati Narang, UIUC
-    <br><a href="https://www.youtube.com/watch?v=hhpIaYi8V3c" target="_blank">Session archive on YouTube</a>
-   <p>
-   18:00: Dinner, UCSD Faculty Club
-<p>
-             <u>Sunday, April 7, 2024</u>
-  <p>
-   8:30: Coffee, light breakfast 
- <p>
-    9:00 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 persson mitigating algo bias in treatment effect estimation.pdf" target="_blank">
-    Detecting and Mitigating Algorithmic Bias in Treatment Effect Estimation: Theory, Methods, and Empirical Evidence</a> 
-    <br>Presented by Joel Persson, Spotify
-    <br>Discussant: Michelangelo Rossi, Télécom Paris
-    <br><a href="https://www.youtube.com/watch?v=HTrzBQgIOCM" target="_blank">Session archive on YouTube</a>
-  <p>
-
-    10:15 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 fong content generation on social media with negative feedback.pdf" target="_blank">
-   Content Generation on Social Media: The Role of Negative Peer Feedback</a> 
-    <br>Presented by Varad Deolankar, Michigan
-    <br>Discussant: Brett Hollenbeck, UCLA
-    <br><a href="https://www.youtube.com/watch?v=asN3TaZVl1E" target="_blank">Session archive on YouTube</a>
-   <p>
-
-    11:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 moehring personalized rankings and user engagement on reddit.pdf" target="_blank">
-    Personalized Rankings and User Engagement: An Empirical Evaluation of the Reddit News Feed</a> 
-    <br>Presented by Alex Moehring, MIT
-    <br>Discussant: Jia Liu, HKUST
-    <br><a href="https://www.youtube.com/watch?v=gI96Wukwff0" target="_blank">Session archive on YouTube</a>
-  <p>
-   12:40: Lunch, UCSD Faculty Club
-<p>
-
-    14:10 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 mela advertiser learning in direct adv markets.pdf" target="_blank">
-  Advertiser Learning in Direct Advertising Markets</a> 
-    <br>Presented by Carl Mela, Duke
-    <br>Discussant: Nils Wernerfelt, Northwestern
-    <br><a href="https://www.youtube.com/watch?v=JifLvj3ri1I" target="_blank">Session archive on YouTube</a>
-   <p>
-    15:30 : <a href="https://github.com/platformanalytics/website/raw/main/wopa2024 simonov attention spillovers from news to ads.pdf" target="_blank">
-    Attention Spillovers from News to Ads: Evidence from an Eye-Tracking Experiment</a> 
-    <br>Presented by Andrey Simonov, Columbia
-    <br>Discussant: Caio Waisman, Northwestern
-    <br><a href="https://www.youtube.com/watch?v=Ax-rqSKyH1E" target="_blank">Session archive on YouTube</a>
-  <p>
-
-   17:00	Snacks at the <a href="https://www.flytorrey.com/" target="_blank">
-     Torrey Pines Gliderport</a>, on a cliff overlooking the Pacific Ocean, weather permitting. Tandem flights available at own cost and risk. 
-    <br>Note: The cliff terrain is uneven. Consider appropriate footwear.
-<p>  
-      
-<details id="2024scicmte">
-  <summary>
-    <b>2024 WoPA Program Committee</b></summary>
-
-<p>
-  We thank the Program Committee members. Their volunteer service makes this workshop possible.
-<p>
-<a href="https://www.luis-aguiar.com"/ target="_blank">Luis Aguiar</a>, University of Zurich<br>
-Paulo Albuquerque, INSEAD<br>
-Diego Aparicio, IESE Business School<br>
-<a href="https://www.guyaridor.net" target="_blank">Guy Aridor</a>, Northwestern Kellogg<br>
-<a href="https://sites.google.com/view/shrabastee" target="_blank">Shrabastee Banerjee</a>, Tilburg University<br>
-<a href="https://tommasobondi.com" target="_blank">Tommaso Bondi</a>, Cornell<br>
-<a href="https://luiscabral.net" target="_blank">Luís Cabral</a>, NYU<br>
-<a href="https://sites.google.com/view/ishitachakraborty"/ target="_blank">Ishita  Chakraborty</a>, University of Wisconsin-Madison<br>
-<a href="https://hanachoi.github.io"/ target="_blank">Hana Choi</a>, University of Rochester<br>
-<a href="https://www.hkubs.hku.hk/people/junhong-chu"/ target="_blank">Junhong Chu</a>, Hong Kong University<br>
-Giovanni Compiani, University of Chicago<br>
-<a href="https://sites.google.com/site/dantedonatiphd" target="_blank">Dante Donati, Columbia University<br></a>
-Yaniv Dover, The Hebrew University Business School<br>
-<a href="https://www.jp-dube.com/" target="_blank">Jean-Pierre Dube</a>, University of Chicago Booth School of Business<br>
-<a href="https://sites.google.com/site/chiarafarronato/" target="_blank">Chiara Farronato</a>, Harvard Business School<br>
-<a href="https://jessica-fong.com" target="_blank">Jessica Fong</a>, University of Michigan<br>
-<a href="https://www.andreyfradkin.com" target="_blank">Andrey Fradkin</a>, Boston University<br>
-<a href="https://pedrogardete.com" target="_blank">Pedro Gardete</a>, Nova School of Business and Economics<br>
-David Godes, John Hopkins University <br>
-<a href="https://bretthollenbeck.com" target="_blank">Brett Hollenbeck</a>, UCLA Anderson<br>
-<a href="https://www.daveholtz.net"/ target="_blank">David Holtz</a>, UC Berkeley<br>
-John J. Horton, Massachusetts Institute of Technology<br>
-Justin T. Huang, University of Michigan<br>
-<a href="https://www.xiang-hui.org"/ target="_blank">Xiang Hui</a>, Washington University in St. Louis<br>
-<a href="https://marketing.wharton.upenn.edu/profile/zhenling"/ target="_blank">Zhenling Jiang</a>, University of Pennsylvania<br>
-<a href="https://www.rafaeljjd.com" target="_blank">Rafael Jimenez-Duran</a>, Bocconi University<br>
-<a href="https://www.gingerjin.com/" target="_blank">Ginger Zhe Jin</a>, University of Maryland<br>
-<a href="https://www.htailam.com"/ target="_blank">H. Tai Lam</a>, UCLA Anderson<br>
-<a href="https://hannahql.github.io"/ target="_blank">Hannah Li</a>, Columbia University<br>
-Jura Liaukonyte, Cornell University<br>
-<a href="https://www.yiliumktg.com/home" target="_blank">Yi Liu</a>, University of Wisconsin - Madison<br>
-<a href="https://meng-liu.com" target="_blank">Meng Liu</a>, Washington University in St Louis<br>
-<a href="https://sites.google.com/site/feilongfaye" target="_blank">Fei Long</a>, University of North Carolina at Chapel Hill<br>
-Michael Luca, Harvard Business School<br>
-<a href="https://sites.google.com/view/nikhilmalik/home" target="_blank">Nikhil Malik</a>, University of Southern California<br>
-<a href="https://michiganross.umich.edu/faculty-research/faculty/puneet-manchanda" target="_blank">Puneet Manchanda</a>, University of Michigan<br>
-<a href="https://www.marshall.usc.edu/personnel/dina-mayzlin" target="_blank">Dina Mayzlin</a>, USC Marshall school <br>
-<a href="https://danielminhmccarthy.com"/ target="_blank">Daniel McCarthy</a>, Emory University Goizueta Business School<br>
-<a href="https://www.cfmela.com"/ target="_blank">Carl F. Mela</a>, Duke University<br>
-<a href="https://www.marshall.usc.edu/personnel/milan-miric" target="_blank">Milan Miric</a>, University of Southern California<br>
-<a href="https://sites.google.com/site/sarahmoshary"/ target="_blank">Sarah Moshary</a>, UC Berkeley, Haas School of Business<br>
-Unnati Narang, UIUC<br>
-<a href="https://www.gsb.stanford.edu/faculty-research/faculty/sridhar-narayanan" target="_blank">Sridhar Narayanan</a>, Stanford University<br>
-<a href="https://omidraf.github.io"/ target="_blank">Omid Rafieian</a>, Cornell Tech<br>
-Imke Reimers, Cornell University<br>
-<a href="https://michelangelorossi.github.io"/ target="_blank">Michelangelo Rossi</a>, Télécom Paris, Institut Polytechnique de Paris<br>
-<a href="https://gsb-faculty.stanford.edu/navdeep-sahni"/ target="_blank">Navdeep S. Sahni</a>, Stanford University<br>
-<a href="https://faculty.washington.edu/aminsa"/ target="_blank">Amin Sayedi</a>, University of Washington<br>
-<a href="https://www.seilerstephan.com"/ target="_blank">Stephan Seiler</a>, Imperial College London<br>
-<a href="https://sites.google.com/view/ananyasen/home" target="_blank">Ananya Sen</a>, Carnegie Mellon University <br>
-<a href="https://www.zijunshi.com"/ target="_blank">Zijun (June) Shi</a>, Hong Kong University of Science and Technology<br>
-<a href="https://www.andreysimonov.com" target="_blank">Andrey Simonov</a>, Columbia University<br>
-<a href="https://www.isamartroncoso.com" target="_blank">Isamar Troncoso</a>, Harvard Business School<br>
-Kosuke Uetake, Yale<br>
-Vithala Rao, Cornell University<br>
-<a href="https://cwaisman.github.io"/ target="_blank">Caio Waisman</a>, Northwestern University<br>
-Joel Waldfogel, University of Minnesota <br>
-<a href="https://www.gsb.stanford.edu/faculty-research/faculty/yuyan-wang" target="_blank">Yuyan Wang</a>, Stanford University<br>
-Nils Wernerfelt, Northwestern<br>
-<a href="https://carlsonschool.umn.edu/faculty/linli-xu" target="_blank">Linli Xu</a>, University of Minnesota<br>
-<a href="https://www.songyao.org" target="_blank">Song Yao</a>, Washington University in St. Louis<br>
-<a href="https://www.pinaryildirim.com" target="_blank">Pinar Yildirim</a>, University of Pennsylvania<br>
-Hema Yoganarasimhan, University of Washington<br>
-<a href="https://www.london.edu/faculty-and-research/faculty-profiles/x/xu-zhang" target="_blank">Xu Zhang</a>, Xu Zhang<br>
-<a href="https://www.rhsmith.umd.edu/directory/bo-bobby-zhou" target="_blank">Bo Zhou</a>, University of Maryland<br>
-<a href="https://kaizhu.me"/ target="_blank">Kai Zhu</a>, Bocconi University<br>
-<a href="https://carlsonschool.umn.edu/faculty/yi-zhu" target="_blank">Yi Zhu</a>, University of Minnesota<br>
-  <p>
-</details>
-<p>
-
-
+          <details class="sub" id="pc2025">
+            <summary>2025 Program Committee</summary>
+            <p class="thanks">We thank the Program Committee members. Their volunteer service makes this workshop possible.</p>
+            <ul class="people">
+            <li><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.andrew.cmu.edu/user/umadurai" target="_blank" rel="noopener">Uttara Ananthakrishnan</a>, Carnegie Mellon University</li>
+            <li><a href="https://www.guyaridor.net" target="_blank" rel="noopener">Guy Aridor</a>, Northwestern Kellogg</li>
+            <li><a href="https://mimansabairathi.github.io/" target="_blank" rel="noopener">Mimansa Bairathi</a>, University College London School of Management</li>
+            <li><a href="https://sites.google.com/view/shrabastee " target="_blank" rel="noopener">Shrabastee Banerjee</a>, Tilburg University</li>
+            <li><a href="https://www.tommasobondi.com" target="_blank" rel="noopener">Tommaso Bondi</a>, Cornell Tech</li>
+            <li><a href="https://luiscabral.net" target="_blank" rel="noopener">Luís Cabral</a>, New York University</li>
+            <li><a href="https://sites.google.com/view/ishitachakraborty" target="_blank" rel="noopener">Ishita Chakraborty</a>, UW Madison</li>
+            <li><a href="https://olin.wustl.edu/faculty/tat-chan" target="_blank" rel="noopener">Tat Chan</a>, Washington University in St Louis</li>
+            <li><a href="https://www.chujunhong.com" target="_blank" rel="noopener">Junhong Chu</a>, The University of Hong Kong</li>
+            <li><a href="https://www.giovannicompiani.com/" target="_blank" rel="noopener">Giovanni Compiani</a>, University of Chicago</li>
+            <li><a href="https://www.mgmt.ucl.ac.uk/people/yitingdeng" target="_blank" rel="noopener">Yiting Deng</a>, University College London</li>
+            <li><a href="https://www.andrew.cmu.edu/user/derdenge/" target="_blank" rel="noopener">Tim Derdenger</a>, Carnegie Mellon University</li>
+            <li><a href="https://sites.google.com/site/dantedonatiphd" target="_blank" rel="noopener">Dante Donati</a>, Columbia University</li>
+            <li><a href="https://robdonnelly.me/" target="_blank" rel="noopener">Rob Donnelly</a>, OpenAI</li>
+            <li><a href="https://www.linkedin.com/in/yaniv-dover-1615643/" target="_blank" rel="noopener">Yaniv Dover</a>, The Hebrew University Business School</li>
+            <li><a href="https://sites.google.com/site/chiarafarronato/" target="_blank" rel="noopener">Chiara Farronato</a>, Harvard University</li>
+            <li><a href="https://www.jessica-fong.com" target="_blank" rel="noopener">Jessica Fong</a>, University of Michigan</li>
+            <li><a href="https://bethfossen.com" target="_blank" rel="noopener">Beth Fossen</a>, Indiana University</li>
+            <li><a href="https://www.andreyfradkin.com" target="_blank" rel="noopener">Andrey Fradkin</a>, Boston University</li>
+            <li><a href="https://www.gsb.stanford.edu/faculty-research/faculty/samuel-goldberg" target="_blank" rel="noopener">Samuel Goldberg</a>, Stanford University</li>
+            <li><a href="https://faculty.washington.edu/agoli/" target="_blank" rel="noopener">Ali Goli</a>, University of Washington</li>
+            <li><a href="https://people.duke.edu/~tg64" target="_blank" rel="noopener">Tong Guo</a>, Duke University</li>
+            <li><a href="https://www.sherryhe.com/" target="_blank" rel="noopener">Sherry He</a>, Michigan State University</li>
+            <li><a href="https://bretthollenbeck.com" target="_blank" rel="noopener">Brett Hollenbeck</a>, UCLA Anderson School of Management</li>
+            <li><a href="https://www.daveholtz.net/" target="_blank" rel="noopener">David Holtz</a>, University of California, Berkeley</li>
+            <li><a href="https://justinthuang.com" target="_blank" rel="noopener">Justin Huang</a>, University of Michigan</li>
+            <li><a href="https://sites.google.com/site/yufenghuangphd" target="_blank" rel="noopener">Yufeng Huang</a>, University of Rochester</li>
+            <li><a href="https://www.xiang-hui.org" target="_blank" rel="noopener">Xiang Hui</a>, Washington University in St. Louis</li>
+            <li><a href="https://goizueta.emory.edu/faculty/profiles/marat-ibragimov" target="_blank" rel="noopener">Marat Ibragimov</a>, Emory University</li>
+            <li><a href="https://marketing.wharton.upenn.edu/profile/zhenling/" target="_blank" rel="noopener">Zhenling Jiang</a>, University of Pennsylvania</li>
+            <li><a href="https://www.malikakorganbekova.com/" target="_blank" rel="noopener">Malika Korganbekova</a>, The University of Chicago Booth School of Business</li>
+            <li><a href="https://www.htailam.com/" target="_blank" rel="noopener">Tai Lam</a>, UCLA</li>
+            <li><a href="https://sites.google.com/view/huilicatherine" target="_blank" rel="noopener">Hui Li</a>, The University of Hong Kong</li>
+            <li><a href="http://www.juraliaukonyte.com/" target="_blank" rel="noopener">Jura Liaukonyte</a>, Cornell University</li>
+            <li><a href="https://business.wisc.edu/directory/profile/yi-liu/" target="_blank" rel="noopener">Yi Liu</a>, University of Wisconsin - Madison</li>
+            <li><a href="https://www.meng-liu.com/" target="_blank" rel="noopener">Meng Liu</a>, Washington University in Saint Louis</li>
+            <li><a href="https://sites.google.com/site/feilongfaye" target="_blank" rel="noopener">Fei Long</a>, University of North Carolina at Chapel Hill</li>
+            <li><a href="https://sites.google.com/view/nikhilmalik/home" target="_blank" rel="noopener">Nikhil Malik</a>, USC</li>
+            <li><a href="http://michiganross.umich.edu/faculty-research/faculty/puneet-manchanda" target="_blank" rel="noopener">Puneet Manchanda</a>, University of Michigan</li>
+            <li><a href="http://danielminhmccarthy.com/" target="_blank" rel="noopener">Daniel McCarthy</a>, University of Maryland College Park</li>
+            <li><a href="https://www.milanmiric.com/" target="_blank" rel="noopener">Milan Miric</a>, University of Southern California</li>
+            <li><a href="https://giesbusiness.illinois.edu/profile/unnati-narang" target="_blank" rel="noopener">Unnati Narang</a>, UIUC</li>
+            <li><a href="https://www.gsb.stanford.edu/faculty-research/faculty/sridhar-narayanan" target="_blank" rel="noopener">Sridhar Narayanan</a>, Stanford University</li>
+            <li><a href="https://sites.google.com/view/olivianatan/home" target="_blank" rel="noopener">Olivia Natan</a>, UC Berkeley</li>
+            <li><a href="https://www.joel-persson.com/" target="_blank" rel="noopener">Joel Persson</a>, Spotify Research</li>
+            <li><a href="https://omidraf.github.io/" target="_blank" rel="noopener">Omid Rafieian</a>, Cornell Tech</li>
+            <li><a href="https://www.johnson.cornell.edu" target="_blank" rel="noopener">Vithala Rao</a>, Cornell University</li>
+            <li><a href="https://imkereimers.weebly.com/" target="_blank" rel="noopener">Imke Reimers</a>, Cornell University</li>
+            <li><a href="https://michelangelorossi.github.io/" target="_blank" rel="noopener">Michelangelo Rossi</a>, Télécom Paris, Institut Polytechnique de Paris</li>
+            <li><a href="https://faculty.washington.edu/aminsa/" target="_blank" rel="noopener">Amin Sayedi</a>, University of Washington</li>
+            <li><a href="https://www.dschweidel.com" target="_blank" rel="noopener">David Schweidel</a>, Emory University</li>
+            <li><a href="https://sites.google.com/view/ananyasen/home" target="_blank" rel="noopener">Ananya Sen</a>, Carnegie Mellon University</li>
+            <li><a href="http://www.venkyshankar.com" target="_blank" rel="noopener">Venky Shankar</a>, Southern Methodist University</li>
+            <li><a href="https://www.andreysimonov.com" target="_blank" rel="noopener">Andrey Simonov</a>, Columbia University</li>
+            <li><a href="https://parksinchaisri.github.io" target="_blank" rel="noopener">Park Sinchaisri</a>, University of California, Berkeley</li>
+            <li><a href="https://olin.wustl.edu/faculty/zijun-tian" target="_blank" rel="noopener">Zijun Tian</a>, Washington University in St. Louis</li>
+            <li><a href="https://cwaisman.github.io/" target="_blank" rel="noopener">Caio Waisman</a>, Northwestern University</li>
+            <li><a href="https://www.gsb.stanford.edu/faculty-research/faculty/yuyan-wang" target="_blank" rel="noopener">Yuyan Wang</a>, Stanford University</li>
+            <li><a href="https://www.sauder.ubc.ca/people/yanwen-wang" target="_blank" rel="noopener">Yanwen Wang</a>, University of British Columbia</li>
+            <li><a href="https://sites.google.com/view/nilswernerfelt/home" target="_blank" rel="noopener">Nils Wernerfelt</a>, Northwestern University</li>
+            <li><a href="https://olin.wustl.edu/faculty/yingkang-xie" target="_blank" rel="noopener">Yingkang Xie</a>, Washington University in St. Louis</li>
+            <li><a href="https://carlsonschool.umn.edu/faculty/linli-xu" target="_blank" rel="noopener">Linli Xu</a>, University of Minnesota</li>
+            <li><a href="https://www.songyao.org" target="_blank" rel="noopener">Song Yao</a>, Washington University in St. Louis</li>
+            <li><a href="https://faculty.washington.edu/hemay/" target="_blank" rel="noopener">Hema Yoganarasimhan</a>, University of Washington</li>
+            <li><a href="https://xu-zhang.com/" target="_blank" rel="noopener">Xu Zhang</a>, London Business School</li>
+            <li><a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=1175206&click=byline" target="_blank" rel="noopener">Shunyuan Zhang</a>, Harvard University</li>
+            <li><a href="https://www.rhsmith.umd.edu/directory/bo-bobby-zhou" target="_blank" rel="noopener">Bobby Zhou</a>, University of Maryland</li>
+            <li><a href="https://kaizhu.me/" target="_blank" rel="noopener">Kai Zhu</a>, Bocconi University</li>
+            </ul>
+          </details>
+        </div>
       </details>
-<p>
-       
 
-      
-      
-<details>
-  <summary>
-    <b>2023 Archive: Program, Papers and Program Committee </b> </summary>
-  
-  <p>
-    <u>Friday, April 7, 2023</u>
-  <p>
-    12:30 : <a href="https://github.com/platformanalytics/website/raw/main/Ursu et al. WoPA Online Advertising as Passive Search v2.pdf" target="_blank">
-    Online Advertising as Passive Search</a> 
-    <br>by Raluca M. Ursu (NYU), <b>Andrey Simonov</b> (Columbia U.), Eunkyung An (NYU).
-    <br>Discussant: <b>Jura Liaukonyte</b> (Cornell U.)
-    <br><a href="https://youtu.be/MqUvUALehBU" target="_blank">Replay on YouTube</a>
-  <p>
-  13:30 : <a href="https://github.com/platformanalytics/website/raw/main/Kim%20et%20al.%20WoPA2023%20Tipping%20in%20a%20Digital%20Services%20Marketplace.pdf" target="_blank">
-  Gratuities in a Digital Services Marketplace</a> 
-  <br>by <b>Seung Hyun Kim</b> (UC San Diego), On Amir (UC San Diego), Kenneth C. Wilbur (UC San Diego). 
-  <br>Discussant: <b>Avner Strulov-Shlain</b> (U. of Chicago)
-    <br><a href="https://youtu.be/rwLSJqe3mwY" target="_blank">Replay on YouTube</a>
-     <p>
-    15:00 : <a href="https://github.com/platformanalytics/website/raw/main/Lam%20WoPA2023%20Platform%20Search%20Design%20and%20Market%20Power.pdf" target="_blank">
-    Platform Search Design and Market Power</a> 
-    <br>by <b>H. Tai Lam</b> (UCLA). 
-    <br>Discussant: <b>Giovanni Compiani</b> (U. of Chicago)
-    <br><a href="https://youtu.be/Qzv_S6B5llA" target="_blank">Replay on YouTube</a>
-<p>
-    16:00 : <a href="https://github.com/platformanalytics/website/raw/main/Ko%20et%20al.%20WoPA2023%20Retention%20Management%20using%20Dynamic%20Off-Policy%20Policy%20Learning.pdf" target="_blank">
-    When to Target Customers? Retention Management using Dynamic Off-Policy Policy Learning</a> 
-    <br>by Ryuya Ko (U. of Tokyo), <b>Kosuke Uetake</b> (Yale U.), Kohei Yata (U. of Wisconsin-Madison), Ryosuke Okada (ZOZO Inc.). 
-    <br>Discussant: <b>Justin Huang</b> (U. of Michigan)
-  <br><a href="https://youtu.be/COOr1J5Z6MA" target="_blank">Replay on YouTube</a>
-<p>
-    17:00 : <a href="https://github.com/platformanalytics/website/raw/main/Xie%20Zhu%20WoPA2023%20Platform%20Leakage%20Incentive%20Conflicts%20in%20Two-Sided%20Markets.pdf" target="_blank">
-  Platform Leakage: Incentive Conflicts in Two-Sided Markets</a> 
-  <br>by <b>Yingkang Xie</b> (Northwestern U.), Huaiyu Zhu (Lalamove). 
-  <br>Discussant: <b>Jessica Fong</b> (U. of Michigan)
-<p>
-  <u>Saturday, April 8, 2023 </u>
-<p>
-09:00 : <a href="https://github.com/platformanalytics/website/raw/main/Malik%20Manzoor%20WoPA2023%20Does%20Machine%20Learning%20Amplify%20Pricing%20Errors%20in%20Housing%20Market.pdf" target="_blank">
-  Does Machine Learning Amplify Pricing Errors in Housing Market?: Economics of ML Feedback Loops</a> 
-  <br>by <b>Nikhil Malik</b> (U. of Southern California), Emaad Manzoor (Cornell U.). 
-  <br>Discussant: <b>Ron Berman</b> (U. of Pennsylvania)
-  <br><a href="https://youtu.be/CmPw6s21hvg" target="_blank">Replay on YouTube</a>
-<p>
-10:00 : <a href="https://github.com/platformanalytics/website/raw/main/Chen%20et%20al.%20WoPA2023%20The%20Effects%20of%20Diversity%20in%20Algorithmic%20Recommendations%20on%20Digital%20Content%20Consumption-A%20Field%20Experiment.pdf" target="_blank">
-  "The Effects of Diversity in Algorithmic Recommendations on Digital Content Consumption: A Field Experiment"</a> 
-  <br>by <b>Guangying Chen</b> (Washington U. in St. Louis), Tat Y. Chan (Washington U. in St. Louis), Dennis J. Zhang (Washington U. in St. Louis), Senmao Liu (NetEase Cloud Music Inc.), Yuxiang Wu (NetEase Cloud Music Inc.). 
-  <br>Discussant: <b>David Holtz</b> (UC Berkeley)
-  <br><a href="https://youtu.be/-JID9TkJBJI" target="_blank">Replay on YouTube</a>
-<p>
-11:00 : <a href="https://github.com/platformanalytics/website/raw/main/Yang%20et%20al.%20WoPA2023%20Advertising%20as%20Information%20for%20Ranking%20E-Commerce%20Search%20Listings.pdf" target="_blank">
-  Advertising as Information for Ranking E-Commerce Search Listings</a> 
-  <br>by <b>Joonhyuk Yang</b> (Notre Dame), Navdeep Sahni (Stanford U.), Harikesh Nair (Google), Xi Xiong (Tiktok). 
-  <br>Discussant: <b>Fei Long</b> (U. of North Carolina)
-  <br><a href="https://youtu.be/FIs52REhIxo" target="_blank">Replay on YouTube</a>
-<p>
-13:30 : <a href="https://github.com/platformanalytics/website/raw/main/Deolankar%20et%20al%20WoPA%202023%20The%20Impact%20of%20Engagement%20with%20User-generated%20Content%20in%20Online%20Discussion%20Forums%20(1).pdf" target="_blank">
-  The Impact of Engagement with User-generated Content in Online Discussion Forums</a> 
-  <br>by <b>Varad Deolankar</b> (U. of Michigan), Ali Goli (U. of Washington), S. Sriram (U. of Michigan), Pradeep K. Chintagunta (U. of Chicago). 
-  <br>Discussant: <b>Davide Proserpio</b> (U. of Southern California)
-  <br><a href="https://www.youtube.com/watch?v=IdxqP2_3NFw" target="_blank">Replay on YouTube</a>
-<p>
-14:30 : <a href="https://github.com/platformanalytics/website/raw/main/Jimenez-Duran%20WoPA2023%20The%20Economics%20of%20Content%20Moderation.pdf" target="_blank">
-  The Economics of Content Moderation: Theory and Experimental Evidence from Hate Speech on Twitter</a> 
-  <br>by <b>Rafael Jimenez-Duran</b> (U. of Chicago). 
-  <br>Discussant: <b>Pinar Yildirim</b> (U. of Pennsylvania)
-  <br><a href="https://youtu.be/tSw8MoTRtA4" target="_blank">Replay on YouTube</a>
-<p>
-        
-      <details>
-  <summary><b>2023 Program Committee </b>
-    </summary>
-<p>
-  We thank the Program Committee members. Their volunteer service made this workshop possible.
-<p>
-  Ron Berman, Assistant Professor, University of Pennsylvania <br>
-Abhishek Borah, Assistant Professor, INSEAD <br>
-Jason Choi, Assistant Professor, University of Maryland <br>
-Avinash Collis, Assistant Professor, University of Texas at Austin <br>
-Giovanni Compiani, Assistant Professor, University of Chicago <br>
-Remi Daviet, Assistant Professor, University of Wisconsin <br>
-Dante Donati, Assistant Professor, Columbia University <br>
-Chiara Farronato, Assistant Professor, Harvard University <br>
-Jessica Fong, Assistant Professor, University of Michigan <br>
-Andrey Fradkin, Assistant Professor, Boston University <br>
-Soheil Ghili, Assistant Professor, Yale University <br>
-Ali Goli, Assistant Professor, University of Washington <br>
-Justin Huang, Assistant Professor, University of Michigan <br>
-Xiang Hui, Assistant Professor, Washington University in St. Louis <br>
-Rafael Jimenez Duran, Assistant Professor, Bocconi University <br>
-Mingyu Joo, Assistant Professor, University of California, Riverside <br>
-Tesary Lin, Assistant Professor, Boston University <br>
-Jia Liu, Assistant Professor, Hong Kong University of Science and Technology <br>
-Nikhil Malik, Assistant Professor, University of Southern California <br>
-Emaad Manzoor, Assistant Professor, Cornell University <br>
-Milan Miric, Assistant Professor, University of Southern California <br>
-Unnati Narang, Assistant Professor, University of Illinois at Urbana-Champaign <br>
-Zachary Nolan, Assistant Professor, University of Delaware <br>
-Omid Rafieian, Assistant Professor, Cornell University <br>
-Oren Reshef, Assistant Professor, Washington University in St. Louis <br>
-Michelangelo Rossi, Assistant Professor, Télécom Paris, Institut Polytechnique de Paris <br>
-Andrey Simonov, Assistant Professor, Columbia University<br>
-Ioannis Stamatopoulos, Associate Professor, University of Texas at Austin <br>
-Ludovic Stourm, Assistant Professor, HEC Paris <br>
-Isamar Troncoso, Assistant Professor, Harvard University <br>
-Kosuke Uetake, Associate Professor, Yale University<br>
-Prasad Vana, Assistant Professor, Dartmouth University<br>
-Yan Xu, Assistant Professor, Virginia Tech University<br>
-Joonhyuk Yang, Assistant Professor, University of Notre Dame <br>
-Luyi Yang, Assistant Professor, University of California, Berkeley <br>
-Xu Zhang, Assistant Professor, London Business School <br>
-Clarice Zhao, Assistant Professor, McGill University<br>
-<p><p>
-  </details>
-<p>
-  
+      <!-- ~~~~~~~~~~ 2024 ~~~~~~~~~~ -->
+      <details class="panel" id="wopa2024">
+        <summary>
+          <span class="year">2024</span>
+          <span class="summary-text"><strong>April 6&ndash;7, 2024 &middot; UC San Diego</strong><span>10 papers &middot; Program, papers, recordings and program committee</span></span>
+          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <div class="panel-body">
+          <h4 class="day">Saturday, April 6, 2024</h4>
+          <ol class="schedule">
+            <li><time>9:00</time><div class="note">Coffee, light breakfast</div></li>
+            <li><time>9:45</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20hui%20designing%20quality%20certificates%20on%20ebay.pdf" target="_blank" rel="noopener">Designing Quality Certificates: Insights from eBay</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Xiang Hui</b> (WUSTL)</span><span><span class="role">Discussant</span>Tommaso Bondi (Cornell)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=6Zu8ADX_EHY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>11:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20reimers%20detection,%20measurement,%20welfare%20anlaysis%20of%20platform%20bias.pdf" target="_blank" rel="noopener">A Framework for Detection, Measurement, and Welfare Analysis of Platform Bias</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Imke Reimers</b> (Cornell)</span><span><span class="role">Discussant</span>Dante Donati (Columbia)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=A7ioonPuBks" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>12:00</time><div class="note">Lunch, UCSD Faculty Club</div></li>
+            <li><time>13:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20malik%20algo%20failures%20and%20consumer%20response%20on%20zillow.pdf" target="_blank" rel="noopener">Algorithm Failures and Consumers&rsquo; Response: Evidence from Zillow</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Nikhil Malik</b> (USC)</span><span><span class="role">Discussant</span>Puneet Manchanda (Michigan)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=v8hGoF432VA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>14:45</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20mummalaneni%20et%20al,%20how%20do%20content%20producers%20respond%20to%20engagement.pdf" target="_blank" rel="noopener">How Do Content Producers Respond to Engagement on Social Media Platforms?</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Simha Mummalaneni</b> (Washington)</span><span><span class="role">Discussant</span>Linli Xu (Minnesota)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=r_wiDSJuKdw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>16:00</time><div class="note">Refreshments</div></li>
+            <li><time>16:40</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20banerjee%20platform%20monetization%20on%20goodreads.pdf" target="_blank" rel="noopener">Unintended Consequences of Platform Monetization on Digital Cultural Markets: Evidence from a Natural Experiment on Goodreads</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Shrabastee Banerjee</b> (Tilburg)</span><span><span class="role">Discussant</span>Unnati Narang (UIUC)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=hhpIaYi8V3c" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>18:00</time><div class="note">Dinner, UCSD Faculty Club</div></li>
+          </ol>
 
+          <h4 class="day">Sunday, April 7, 2024</h4>
+          <ol class="schedule">
+            <li><time>8:30</time><div class="note">Coffee, light breakfast</div></li>
+            <li><time>9:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20persson%20mitigating%20algo%20bias%20in%20treatment%20effect%20estimation.pdf" target="_blank" rel="noopener">Detecting and Mitigating Algorithmic Bias in Treatment Effect Estimation: Theory, Methods, and Empirical Evidence</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Joel Persson</b> (Spotify)</span><span><span class="role">Discussant</span>Michelangelo Rossi (T&eacute;l&eacute;com Paris)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=HTrzBQgIOCM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>10:15</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20fong%20content%20generation%20on%20social%20media%20with%20negative%20feedback.pdf" target="_blank" rel="noopener">Content Generation on Social Media: The Role of Negative Peer Feedback</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Varad Deolankar</b> (Michigan)</span><span><span class="role">Discussant</span>Brett Hollenbeck (UCLA)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=asN3TaZVl1E" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>11:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20moehring%20personalized%20rankings%20and%20user%20engagement%20on%20reddit.pdf" target="_blank" rel="noopener">Personalized Rankings and User Engagement: An Empirical Evaluation of the Reddit News Feed</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Alex Moehring</b> (MIT)</span><span><span class="role">Discussant</span>Jia Liu (HKUST)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=gI96Wukwff0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>12:40</time><div class="note">Lunch, UCSD Faculty Club</div></li>
+            <li><time>14:10</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20mela%20advertiser%20learning%20in%20direct%20adv%20markets.pdf" target="_blank" rel="noopener">Advertiser Learning in Direct Advertising Markets</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Carl Mela</b> (Duke)</span><span><span class="role">Discussant</span>Nils Wernerfelt (Northwestern)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=JifLvj3ri1I" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>15:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024%20simonov%20attention%20spillovers%20from%20news%20to%20ads.pdf" target="_blank" rel="noopener">Attention Spillovers from News to Ads: Evidence from an Eye-Tracking Experiment</a>
+              <div class="talk-meta"><span><span class="role">Presenter</span><b>Andrey Simonov</b> (Columbia)</span><span><span class="role">Discussant</span>Caio Waisman (Northwestern)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=Ax-rqSKyH1E" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>17:00</time><div class="note">Snacks at the <a href="https://www.flytorrey.com/" target="_blank" rel="noopener">Torrey Pines Gliderport</a>, on a cliff overlooking the Pacific Ocean, weather permitting. Tandem flights available at own cost and risk. Note: the cliff terrain is uneven; consider appropriate footwear.</div></li>
+          </ol>
 
-  
-<details>
-  <summary>
-    <b>Links to other Platform Fora</b></summary>
-  <p>
-    <a href="https://questromworld.bu.edu/platformstrategy/" target="_blank">Platform Strategy Research Symposium at BU-Questrom</a>
-    <p>
-    <a href="https://www.dmcforum.net/european-digital-platform-research-network-eu-dpr/" target="_blank">European Digital Platform Research Network (EU-DPRN)</a>
-    <p>
-    <a href="https://www.tse-fr.eu/online-seminar-economics-platforms" target="_blank">Online seminar on the Economics of Platforms</a>
-    <p>
-      <a href="https://platformpapers.substack.com/" target="_blank">Platform Papers Substack</a> by Joost Rietveld
-    <p>
-      <a href="https://tap.podigee.io/" target="_blank">Talking about Platforms</a> podcast interviews academic researchers, among others
-      <p>
-      <a href="https://www.platformer.news/" target="_blank">Platformer News  </a>
-    <p>
-      
-Please email us any other relevant fora we can include here.
-  </details>
-<p>
-       
-  </details>
-<p>
-  
-<details>
-  <summary>
-    <b>Stay connected</b></summary>
-  <p>
-    Enter your email address here to receive future updates.<br>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegWe6Yo8xD0HgnD0qmcnh7vpDIWnVlnzJd62HUkLUvCWSSeQ/viewform?embedded=true" width="640" height="471" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-<p>
-    Organizers: <a href="https://sites.google.com/view/minkyung-kim/home" target="_blank">Minkyung Kim</a> (CMU), <a href="https://dadepro.github.io/" target="_blank">Davide Proserpio</a> (USC), <a href="https://kennethcwilbur.github.io/website//" target="_blank">Kenneth C. Wilbur</a> (UCSD)
-    <p>
-    Contact : Workshoponplatformanalytics, followed by the "at" symbol, and then gmail.com
-</details>
-<p>
-       
+          <details class="sub" id="2024scicmte">
+            <summary>2024 Program Committee</summary>
+            <p class="thanks">We thank the Program Committee members. Their volunteer service makes this workshop possible.</p>
+            <ul class="people">
+            <li><a href="https://www.luis-aguiar.com" target="_blank" rel="noopener">Luis Aguiar</a>, University of Zurich</li>
+            <li>Paulo Albuquerque, INSEAD</li>
+            <li>Diego Aparicio, IESE Business School</li>
+            <li><a href="https://www.guyaridor.net" target="_blank" rel="noopener">Guy Aridor</a>, Northwestern Kellogg</li>
+            <li><a href="https://sites.google.com/view/shrabastee" target="_blank" rel="noopener">Shrabastee Banerjee</a>, Tilburg University</li>
+            <li><a href="https://tommasobondi.com" target="_blank" rel="noopener">Tommaso Bondi</a>, Cornell</li>
+            <li><a href="https://luiscabral.net" target="_blank" rel="noopener">Luís Cabral</a>, NYU</li>
+            <li><a href="https://sites.google.com/view/ishitachakraborty" target="_blank" rel="noopener">Ishita  Chakraborty</a>, University of Wisconsin-Madison</li>
+            <li><a href="https://hanachoi.github.io" target="_blank" rel="noopener">Hana Choi</a>, University of Rochester</li>
+            <li><a href="https://www.hkubs.hku.hk/people/junhong-chu" target="_blank" rel="noopener">Junhong Chu</a>, Hong Kong University</li>
+            <li>Giovanni Compiani, University of Chicago</li>
+            <li><a href="https://sites.google.com/site/dantedonatiphd" target="_blank" rel="noopener">Dante Donati</a>, Columbia University</li>
+            <li>Yaniv Dover, The Hebrew University Business School</li>
+            <li><a href="https://www.jp-dube.com/" target="_blank" rel="noopener">Jean-Pierre Dube</a>, University of Chicago Booth School of Business</li>
+            <li><a href="https://sites.google.com/site/chiarafarronato/" target="_blank" rel="noopener">Chiara Farronato</a>, Harvard Business School</li>
+            <li><a href="https://jessica-fong.com" target="_blank" rel="noopener">Jessica Fong</a>, University of Michigan</li>
+            <li><a href="https://www.andreyfradkin.com" target="_blank" rel="noopener">Andrey Fradkin</a>, Boston University</li>
+            <li><a href="https://pedrogardete.com" target="_blank" rel="noopener">Pedro Gardete</a>, Nova School of Business and Economics</li>
+            <li>David Godes, John Hopkins University</li>
+            <li><a href="https://bretthollenbeck.com" target="_blank" rel="noopener">Brett Hollenbeck</a>, UCLA Anderson</li>
+            <li><a href="https://www.daveholtz.net" target="_blank" rel="noopener">David Holtz</a>, UC Berkeley</li>
+            <li>John J. Horton, Massachusetts Institute of Technology</li>
+            <li>Justin T. Huang, University of Michigan</li>
+            <li><a href="https://www.xiang-hui.org" target="_blank" rel="noopener">Xiang Hui</a>, Washington University in St. Louis</li>
+            <li><a href="https://marketing.wharton.upenn.edu/profile/zhenling" target="_blank" rel="noopener">Zhenling Jiang</a>, University of Pennsylvania</li>
+            <li><a href="https://www.rafaeljjd.com" target="_blank" rel="noopener">Rafael Jimenez-Duran</a>, Bocconi University</li>
+            <li><a href="https://www.gingerjin.com/" target="_blank" rel="noopener">Ginger Zhe Jin</a>, University of Maryland</li>
+            <li><a href="https://www.htailam.com" target="_blank" rel="noopener">H. Tai Lam</a>, UCLA Anderson</li>
+            <li><a href="https://hannahql.github.io" target="_blank" rel="noopener">Hannah Li</a>, Columbia University</li>
+            <li>Jura Liaukonyte, Cornell University</li>
+            <li><a href="https://www.yiliumktg.com/home" target="_blank" rel="noopener">Yi Liu</a>, University of Wisconsin - Madison</li>
+            <li><a href="https://meng-liu.com" target="_blank" rel="noopener">Meng Liu</a>, Washington University in St Louis</li>
+            <li><a href="https://sites.google.com/site/feilongfaye" target="_blank" rel="noopener">Fei Long</a>, University of North Carolina at Chapel Hill</li>
+            <li>Michael Luca, Harvard Business School</li>
+            <li><a href="https://sites.google.com/view/nikhilmalik/home" target="_blank" rel="noopener">Nikhil Malik</a>, University of Southern California</li>
+            <li><a href="https://michiganross.umich.edu/faculty-research/faculty/puneet-manchanda" target="_blank" rel="noopener">Puneet Manchanda</a>, University of Michigan</li>
+            <li><a href="https://www.marshall.usc.edu/personnel/dina-mayzlin" target="_blank" rel="noopener">Dina Mayzlin</a>, USC Marshall school</li>
+            <li><a href="https://danielminhmccarthy.com" target="_blank" rel="noopener">Daniel McCarthy</a>, Emory University Goizueta Business School</li>
+            <li><a href="https://www.cfmela.com" target="_blank" rel="noopener">Carl F. Mela</a>, Duke University</li>
+            <li><a href="https://www.marshall.usc.edu/personnel/milan-miric" target="_blank" rel="noopener">Milan Miric</a>, University of Southern California</li>
+            <li><a href="https://sites.google.com/site/sarahmoshary" target="_blank" rel="noopener">Sarah Moshary</a>, UC Berkeley, Haas School of Business</li>
+            <li>Unnati Narang, UIUC</li>
+            <li><a href="https://www.gsb.stanford.edu/faculty-research/faculty/sridhar-narayanan" target="_blank" rel="noopener">Sridhar Narayanan</a>, Stanford University</li>
+            <li><a href="https://omidraf.github.io" target="_blank" rel="noopener">Omid Rafieian</a>, Cornell Tech</li>
+            <li>Imke Reimers, Cornell University</li>
+            <li><a href="https://michelangelorossi.github.io" target="_blank" rel="noopener">Michelangelo Rossi</a>, Télécom Paris, Institut Polytechnique de Paris</li>
+            <li><a href="https://gsb-faculty.stanford.edu/navdeep-sahni" target="_blank" rel="noopener">Navdeep S. Sahni</a>, Stanford University</li>
+            <li><a href="https://faculty.washington.edu/aminsa" target="_blank" rel="noopener">Amin Sayedi</a>, University of Washington</li>
+            <li><a href="https://www.seilerstephan.com" target="_blank" rel="noopener">Stephan Seiler</a>, Imperial College London</li>
+            <li><a href="https://sites.google.com/view/ananyasen/home" target="_blank" rel="noopener">Ananya Sen</a>, Carnegie Mellon University</li>
+            <li><a href="https://www.zijunshi.com" target="_blank" rel="noopener">Zijun (June) Shi</a>, Hong Kong University of Science and Technology</li>
+            <li><a href="https://www.andreysimonov.com" target="_blank" rel="noopener">Andrey Simonov</a>, Columbia University</li>
+            <li><a href="https://www.isamartroncoso.com" target="_blank" rel="noopener">Isamar Troncoso</a>, Harvard Business School</li>
+            <li>Kosuke Uetake, Yale</li>
+            <li>Vithala Rao, Cornell University</li>
+            <li><a href="https://cwaisman.github.io" target="_blank" rel="noopener">Caio Waisman</a>, Northwestern University</li>
+            <li>Joel Waldfogel, University of Minnesota</li>
+            <li><a href="https://www.gsb.stanford.edu/faculty-research/faculty/yuyan-wang" target="_blank" rel="noopener">Yuyan Wang</a>, Stanford University</li>
+            <li>Nils Wernerfelt, Northwestern</li>
+            <li><a href="https://carlsonschool.umn.edu/faculty/linli-xu" target="_blank" rel="noopener">Linli Xu</a>, University of Minnesota</li>
+            <li><a href="https://www.songyao.org" target="_blank" rel="noopener">Song Yao</a>, Washington University in St. Louis</li>
+            <li><a href="https://www.pinaryildirim.com" target="_blank" rel="noopener">Pinar Yildirim</a>, University of Pennsylvania</li>
+            <li>Hema Yoganarasimhan, University of Washington</li>
+            <li><a href="https://www.london.edu/faculty-and-research/faculty-profiles/x/xu-zhang" target="_blank" rel="noopener">Xu Zhang</a>, London Business School</li>
+            <li><a href="https://www.rhsmith.umd.edu/directory/bo-bobby-zhou" target="_blank" rel="noopener">Bo Zhou</a>, University of Maryland</li>
+            <li><a href="https://kaizhu.me" target="_blank" rel="noopener">Kai Zhu</a>, Bocconi University</li>
+            <li><a href="https://carlsonschool.umn.edu/faculty/yi-zhu" target="_blank" rel="noopener">Yi Zhu</a>, University of Minnesota</li>
+            </ul>
+          </details>
+        </div>
+      </details>
 
+      <!-- ~~~~~~~~~~ 2023 ~~~~~~~~~~ -->
+      <details class="panel" id="wopa2023">
+        <summary>
+          <span class="year">2023</span>
+          <span class="summary-text"><strong>April 7&ndash;8, 2023 &middot; UC San Diego</strong><span>10 papers &middot; Program, papers, recordings and program committee</span></span>
+          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <div class="panel-body">
+          <h4 class="day">Friday, April 7, 2023</h4>
+          <ol class="schedule">
+            <li><time>12:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Ursu%20et%20al.%20WoPA%20Online%20Advertising%20as%20Passive%20Search%20v2.pdf" target="_blank" rel="noopener">Online Advertising as Passive Search</a>
+              <div class="authors">Raluca M. Ursu (NYU), <b>Andrey Simonov</b> (Columbia U.), Eunkyung An (NYU)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Jura Liaukonyte (Cornell U.)</span></div>
+              <a class="video" href="https://youtu.be/MqUvUALehBU" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>13:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Kim%20et%20al.%20WoPA2023%20Tipping%20in%20a%20Digital%20Services%20Marketplace.pdf" target="_blank" rel="noopener">Gratuities in a Digital Services Marketplace</a>
+              <div class="authors"><b>Seung Hyun Kim</b> (UC San Diego), On Amir (UC San Diego), Kenneth C. Wilbur (UC San Diego)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Avner Strulov-Shlain (U. of Chicago)</span></div>
+              <a class="video" href="https://youtu.be/rwLSJqe3mwY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>15:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Lam%20WoPA2023%20Platform%20Search%20Design%20and%20Market%20Power.pdf" target="_blank" rel="noopener">Platform Search Design and Market Power</a>
+              <div class="authors"><b>H. Tai Lam</b> (UCLA)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Giovanni Compiani (U. of Chicago)</span></div>
+              <a class="video" href="https://youtu.be/Qzv_S6B5llA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>16:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Ko%20et%20al.%20WoPA2023%20Retention%20Management%20using%20Dynamic%20Off-Policy%20Policy%20Learning.pdf" target="_blank" rel="noopener">When to Target Customers? Retention Management using Dynamic Off-Policy Policy Learning</a>
+              <div class="authors">Ryuya Ko (U. of Tokyo), <b>Kosuke Uetake</b> (Yale U.), Kohei Yata (U. of Wisconsin-Madison), Ryosuke Okada (ZOZO Inc.)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Justin Huang (U. of Michigan)</span></div>
+              <a class="video" href="https://youtu.be/COOr1J5Z6MA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>17:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Xie%20Zhu%20WoPA2023%20Platform%20Leakage%20Incentive%20Conflicts%20in%20Two-Sided%20Markets.pdf" target="_blank" rel="noopener">Platform Leakage: Incentive Conflicts in Two-Sided Markets</a>
+              <div class="authors"><b>Yingkang Xie</b> (Northwestern U.), Huaiyu Zhu (Lalamove)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Jessica Fong (U. of Michigan)</span></div>
+            </div></li>
+          </ol>
+
+          <h4 class="day">Saturday, April 8, 2023</h4>
+          <ol class="schedule">
+            <li><time>9:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Malik%20Manzoor%20WoPA2023%20Does%20Machine%20Learning%20Amplify%20Pricing%20Errors%20in%20Housing%20Market.pdf" target="_blank" rel="noopener">Does Machine Learning Amplify Pricing Errors in Housing Market? Economics of ML Feedback Loops</a>
+              <div class="authors"><b>Nikhil Malik</b> (U. of Southern California), Emaad Manzoor (Cornell U.)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Ron Berman (U. of Pennsylvania)</span></div>
+              <a class="video" href="https://youtu.be/CmPw6s21hvg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>10:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Chen%20et%20al.%20WoPA2023%20The%20Effects%20of%20Diversity%20in%20Algorithmic%20Recommendations%20on%20Digital%20Content%20Consumption-A%20Field%20Experiment.pdf" target="_blank" rel="noopener">The Effects of Diversity in Algorithmic Recommendations on Digital Content Consumption: A Field Experiment</a>
+              <div class="authors"><b>Guangying Chen</b> (Washington U. in St. Louis), Tat Y. Chan (Washington U. in St. Louis), Dennis J. Zhang (Washington U. in St. Louis), Senmao Liu (NetEase Cloud Music Inc.), Yuxiang Wu (NetEase Cloud Music Inc.)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>David Holtz (UC Berkeley)</span></div>
+              <a class="video" href="https://youtu.be/-JID9TkJBJI" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>11:00</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Yang%20et%20al.%20WoPA2023%20Advertising%20as%20Information%20for%20Ranking%20E-Commerce%20Search%20Listings.pdf" target="_blank" rel="noopener">Advertising as Information for Ranking E-Commerce Search Listings</a>
+              <div class="authors"><b>Joonhyuk Yang</b> (Notre Dame), Navdeep Sahni (Stanford U.), Harikesh Nair (Google), Xi Xiong (TikTok)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Fei Long (U. of North Carolina)</span></div>
+              <a class="video" href="https://youtu.be/FIs52REhIxo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>13:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Deolankar%20et%20al%20WoPA%202023%20The%20Impact%20of%20Engagement%20with%20User-generated%20Content%20in%20Online%20Discussion%20Forums%20(1).pdf" target="_blank" rel="noopener">The Impact of Engagement with User-generated Content in Online Discussion Forums</a>
+              <div class="authors"><b>Varad Deolankar</b> (U. of Michigan), Ali Goli (U. of Washington), S. Sriram (U. of Michigan), Pradeep K. Chintagunta (U. of Chicago)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Davide Proserpio (U. of Southern California)</span></div>
+              <a class="video" href="https://www.youtube.com/watch?v=IdxqP2_3NFw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+            <li><time>14:30</time><div>
+              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/Jimenez-Duran%20WoPA2023%20The%20Economics%20of%20Content%20Moderation.pdf" target="_blank" rel="noopener">The Economics of Content Moderation: Theory and Experimental Evidence from Hate Speech on Twitter</a>
+              <div class="authors"><b>Rafael Jimenez-Duran</b> (U. of Chicago)</div>
+              <div class="talk-meta"><span><span class="role">Discussant</span>Pinar Yildirim (U. of Pennsylvania)</span></div>
+              <a class="video" href="https://youtu.be/tSw8MoTRtA4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
+            </div></li>
+          </ol>
+
+          <details class="sub" id="pc2023">
+            <summary>2023 Program Committee</summary>
+            <p class="thanks">We thank the Program Committee members. Their volunteer service made this workshop possible.</p>
+            <ul class="people">
+            <li>Ron Berman, Assistant Professor, University of Pennsylvania</li>
+            <li>Abhishek Borah, Assistant Professor, INSEAD</li>
+            <li>Jason Choi, Assistant Professor, University of Maryland</li>
+            <li>Avinash Collis, Assistant Professor, University of Texas at Austin</li>
+            <li>Giovanni Compiani, Assistant Professor, University of Chicago</li>
+            <li>Remi Daviet, Assistant Professor, University of Wisconsin</li>
+            <li>Dante Donati, Assistant Professor, Columbia University</li>
+            <li>Chiara Farronato, Assistant Professor, Harvard University</li>
+            <li>Jessica Fong, Assistant Professor, University of Michigan</li>
+            <li>Andrey Fradkin, Assistant Professor, Boston University</li>
+            <li>Soheil Ghili, Assistant Professor, Yale University</li>
+            <li>Ali Goli, Assistant Professor, University of Washington</li>
+            <li>Justin Huang, Assistant Professor, University of Michigan</li>
+            <li>Xiang Hui, Assistant Professor, Washington University in St. Louis</li>
+            <li>Rafael Jimenez Duran, Assistant Professor, Bocconi University</li>
+            <li>Mingyu Joo, Assistant Professor, University of California, Riverside</li>
+            <li>Tesary Lin, Assistant Professor, Boston University</li>
+            <li>Jia Liu, Assistant Professor, Hong Kong University of Science and Technology</li>
+            <li>Nikhil Malik, Assistant Professor, University of Southern California</li>
+            <li>Emaad Manzoor, Assistant Professor, Cornell University</li>
+            <li>Milan Miric, Assistant Professor, University of Southern California</li>
+            <li>Unnati Narang, Assistant Professor, University of Illinois at Urbana-Champaign</li>
+            <li>Zachary Nolan, Assistant Professor, University of Delaware</li>
+            <li>Omid Rafieian, Assistant Professor, Cornell University</li>
+            <li>Oren Reshef, Assistant Professor, Washington University in St. Louis</li>
+            <li>Michelangelo Rossi, Assistant Professor, Télécom Paris, Institut Polytechnique de Paris</li>
+            <li>Andrey Simonov, Assistant Professor, Columbia University</li>
+            <li>Ioannis Stamatopoulos, Associate Professor, University of Texas at Austin</li>
+            <li>Ludovic Stourm, Assistant Professor, HEC Paris</li>
+            <li>Isamar Troncoso, Assistant Professor, Harvard University</li>
+            <li>Kosuke Uetake, Associate Professor, Yale University</li>
+            <li>Prasad Vana, Assistant Professor, Dartmouth University</li>
+            <li>Yan Xu, Assistant Professor, Virginia Tech University</li>
+            <li>Joonhyuk Yang, Assistant Professor, University of Notre Dame</li>
+            <li>Luyi Yang, Assistant Professor, University of California, Berkeley</li>
+            <li>Xu Zhang, Assistant Professor, London Business School</li>
+            </ul>
+          </details>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= OTHER FORA ================= -->
+  <section class="block" id="fora">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Community</div>
+        <h2>Links to other platform fora</h2>
+      </div>
+      <ul class="fora">
+        <li><a href="https://questromworld.bu.edu/platformstrategy/" target="_blank" rel="noopener"><strong>Platform Strategy Research Symposium</strong><span>Boston University Questrom</span></a></li>
+        <li><a href="https://www.dmcforum.net/european-digital-platform-research-network-eu-dpr/" target="_blank" rel="noopener"><strong>European Digital Platform Research Network</strong><span>EU-DPRN</span></a></li>
+        <li><a href="https://www.tse-fr.eu/online-seminar-economics-platforms" target="_blank" rel="noopener"><strong>Online Seminar on the Economics of Platforms</strong><span>Toulouse School of Economics</span></a></li>
+        <li><a href="https://platformpapers.substack.com/" target="_blank" rel="noopener"><strong>Platform Papers</strong><span>Substack by Joost Rietveld</span></a></li>
+        <li><a href="https://tap.podigee.io/" target="_blank" rel="noopener"><strong>Talking about Platforms</strong><span>Podcast interviews with academic researchers, among others</span></a></li>
+        <li><a href="https://www.platformer.news/" target="_blank" rel="noopener"><strong>Platformer News</strong><span>Independent newsletter on platforms</span></a></li>
+      </ul>
+      <p style="color:var(--ink-soft)">Please email us any other relevant fora we can include here.</p>
+    </div>
+  </section>
+
+  <!-- ================= STAY CONNECTED ================= -->
+  <section class="block" id="connect">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Stay connected</div>
+        <h2>Get future updates</h2>
+        <p>Enter your email address to receive announcements about calls for papers, programs and registration.</p>
+      </div>
+      <div class="connect">
+        <div>
+          <iframe class="form-frame" title="WoPA mailing list sign-up form" src="https://docs.google.com/forms/d/e/1FAIpQLSegWe6Yo8xD0HgnD0qmcnh7vpDIWnVlnzJd62HUkLUvCWSSeQ/viewform?embedded=true" loading="lazy">Loading&hellip;</iframe>
+        </div>
+        <aside>
+          <div class="card">
+            <h3>Organizers</h3>
+            <ul class="organizers">
+              <li><span class="avatar" aria-hidden="true">MK</span><div><a href="https://sites.google.com/view/minkyung-kim/home" target="_blank" rel="noopener">Minkyung Kim</a><small>Carnegie Mellon University</small></div></li>
+              <li><span class="avatar" aria-hidden="true">DP</span><div><a href="https://dadepro.github.io/" target="_blank" rel="noopener">Davide Proserpio</a><small>University of Southern California</small></div></li>
+              <li><span class="avatar" aria-hidden="true">KW</span><div><a href="https://kennethcwilbur.github.io/website//" target="_blank" rel="noopener">Kenneth C. Wilbur</a><small>University of California, San Diego</small></div></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Contact</h3>
+            <p style="margin:0">Email <span class="contact">Workshoponplatformanalytics</span>, followed by the &ldquo;at&rdquo; symbol, and then <span class="contact">gmail.com</span>.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2023&ndash;2027 Workshop on Platform Analytics &middot; <a href="https://platformanalytics.org">platformanalytics.org</a></span>
+    <span><a href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">YouTube channel</a> &middot; <a href="#top">Back to top</a></span>
+  </div>
+</footer>
+
+<script>
+  // Open the collapsed panel that contains a linked anchor (e.g. #wopa2024 or #2024scicmte).
+  (function () {
+    function reveal() {
+      var id = location.hash.slice(1);
+      if (!id) return;
+      var el = document.getElementById(id);
+      if (!el) return;
+      var node = el;
+      while (node && node !== document.body) {
+        if (node.tagName === 'DETAILS') node.open = true;
+        node = node.parentElement;
+      }
+      el.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', reveal);
+    reveal();
+  })();
+</script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>

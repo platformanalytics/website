@@ -24,9 +24,9 @@
     * 2027 key dates live in the "Call for Papers" section (search
       for "EDIT ME"). Update the deadline, workshop dates and the
       EasyChair link there and in the hero at the top.
-    * Registration and Travel sections for 2027 are kept below the
-      Call for Papers inside an HTML comment. Remove the comment
-      markers when registration opens.
+    * Registration and Travel sections are written to be evergreen.
+      When registration opens, swap in the "Register here" button
+      (search for "EDIT ME" in the Registration section).
     * When the 2027 program is announced, add a new "Program" block
       (copy the 2026 archive block and change the year), and move the
       2026 block into "Past workshops" if it is not already there.
@@ -137,6 +137,8 @@
     .btn:active { transform: translateY(1px); }
     .btn-primary { background: #fff; color: var(--ink); }
     .btn-primary:hover { background: #e8fdf8; color: var(--ink); }
+    .prose .btn-primary { background: var(--ink); color: #fff; }
+    .prose .btn-primary:hover { background: var(--dark-2); color: #fff; }
     .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.28); }
     .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); color: #fff; }
     .btn svg { width: 17px; height: 17px; }
@@ -289,9 +291,10 @@
     <nav aria-label="Primary">
       <ul class="nav">
         <li><a href="#about">About</a></li>
-        <li><a href="#cfp">Call for papers</a></li>
+        <li><a href="#cfp">Current edition</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#travel">Travel</a></li>
         <li><a href="#past">Past workshops</a></li>
-        <li><a href="#fora">Other forums</a></li>
         <li><a href="#connect">Contact</a></li>
         <li><a class="cta" href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">Watch talks</a></li>
       </ul>
@@ -391,7 +394,6 @@
             <ol>
               <li><div><span class="label">Submissions open</span><span class="value">September 20, 2026</span><span class="note">Via EasyChair.</span></div></li>
               <li><div><span class="label">Submission deadline</span><span class="value">December 6, 2026</span><span class="note">One submission per submitting author.</span></div></li>
-              <li><div><span class="label">Notification</span><span class="value">To be announced</span><span class="note">Authors of accepted papers are invited to register first.</span></div></li>
               <li><div><span class="label">Workshop</span><span class="value">April 2&ndash;3, 2027</span><span class="note">Friday and Saturday, Rady School of Management, University of California, San Diego.</span></div></li>
             </ol>
             <!-- EDIT ME: when the EasyChair site opens, replace the paragraph below with:
@@ -403,19 +405,19 @@
     </div>
   </section>
 
-  <!-- ================= 2027 REGISTRATION AND TRAVEL (hidden until announced) =================
-       Remove this comment's opening and closing markers to publish these sections.
-
+  <!-- ================= REGISTRATION ================= -->
   <section class="block" id="registration">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">2027 Registration</div>
-        <h2>Register for WoPA 2027</h2>
+        <div class="kicker">Registration</div>
+        <h2>Attending the workshop</h2>
         <p>All attendees must register. Registration fees primarily go toward catering expenses.</p>
       </div>
       <div class="grid-2">
         <div class="prose">
-          <p><a class="btn btn-primary" href="REGISTRATION-LINK" target="_blank" rel="noopener">Register here</a></p>
+          <!-- EDIT ME: when registration opens, replace the paragraph below with:
+          <p><a class="btn btn-primary" href="REGISTRATION-LINK" target="_blank" rel="noopener">Register here</a></p> -->
+          <p>Authors of accepted papers are invited to register first. The registration link is posted here once the program is announced, typically about two months before the workshop.</p>
           <p>Please contact <a href="mailto:jthiel@ucsd.edu">Jana</a> in case of difficulties, questions or refunds.</p>
           <p>Registration includes lunch both days and dinner on the first day, including vegetarian and vegan options.</p>
           <p>WoPA is an in-person event with no online or hybrid attendance option. We intend to post talk videos on <a href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">the WoPA YouTube channel</a> after the workshop.</p>
@@ -427,7 +429,7 @@
               <div><dt>Students</dt><dd>$99 doctoral students and postdocs</dd></div>
               <div><dt>Faculty</dt><dd>$199 faculty and non-profits</dd></div>
               <div><dt>Industry</dt><dd>$299</dd></div>
-              <div><dt>Deadline</dt><dd>Registration is capped at 60 and closes on DATE (firm). No refunds after DATE.</dd></div>
+              <div><dt>Capacity</dt><dd>Registration is capped at 60 and closes about two weeks before the workshop (firm). No refunds after the registration deadline.</dd></div>
             </dl>
           </div>
         </aside>
@@ -469,8 +471,6 @@
       </div>
     </div>
   </section>
-
-  ================= END HIDDEN 2027 SECTIONS ================= -->
 
   <!-- ================= PAST WORKSHOPS ================= -->
   <section class="block" id="past">

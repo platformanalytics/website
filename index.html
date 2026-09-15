@@ -269,7 +269,15 @@
 
     /* ---------- Contact ---------- */
     .connect { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
-    .form-frame { width: 100%; max-width: 640px; height: 520px; border: 0; border-radius: 12px; background: #fff; }
+    .signup label { display: block; font-weight: 600; margin-bottom: .55rem; }
+    .signup-row { display: flex; gap: .6rem; align-items: stretch; }
+    .signup input[type="email"] { flex: 1; min-width: 0; padding: .7rem .9rem; border: 1px solid var(--line-strong); border-radius: 10px; font: inherit; font-size: .95rem; color: var(--ink); background: #fff; }
+    .signup input[type="email"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .signup .btn-primary { background: var(--ink); color: #fff; border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+    .signup .btn-primary:hover { background: var(--dark-2); color: #fff; }
+    .signup .note { color: var(--ink-soft); font-size: .93rem; margin: .75rem 0 0; }
+    .signup iframe[hidden], .signup [hidden] { display: none; }
+    @media (max-width: 560px) { .signup-row { flex-direction: column; } }
     @media (max-width: 860px) { .connect { grid-template-columns: 1fr; } }
     .organizers { list-style: none; margin: 0; padding: 0; }
     .organizers li { display: flex; align-items: center; gap: .9rem; padding: .7rem 0; border-top: 1px solid var(--line); }
@@ -283,7 +291,7 @@
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 
     @media print {
-      .site-header, .hero .actions, .skip, .form-frame { display: none !important; }
+      .site-header, .hero .actions, .skip, .signup { display: none !important; }
       .hero { background: none; color: var(--ink); }
       .hero h1 em { background: none; color: inherit; }
       details.panel, .card { box-shadow: none; }
@@ -306,7 +314,7 @@
         <li><a href="#cfp">2027 CFP</a></li>
         <li><a href="#logistics">Logistics</a></li>
         <li><a href="#past">Past workshops</a></li>
-        <li><a href="#connect">Contact</a></li>
+        <li><a href="#connect">Connect</a></li>
         <li><a class="cta" href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">Watch talks</a></li>
       </ul>
     </nav>
@@ -1160,13 +1168,24 @@
   <section class="block" id="connect">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">Stay connected</div>
+        <div class="kicker">Connect</div>
         <h2>Get future updates</h2>
         <p>Enter your email address to receive announcements about calls for papers, programs and registration.</p>
       </div>
       <div class="connect">
-        <div>
-          <iframe class="form-frame" title="WoPA mailing list sign-up form" src="https://docs.google.com/forms/d/e/1FAIpQLSegWe6Yo8xD0HgnD0qmcnh7vpDIWnVlnzJd62HUkLUvCWSSeQ/viewform?embedded=true" loading="lazy">Loading&hellip;</iframe>
+        <div class="card signup">
+          <!-- Posts straight into the "WoPA Email Intake" Google Form (question entry.318605875), so sign-ups keep landing in the same responses sheet. -->
+          <form id="signup" action="https://docs.google.com/forms/d/e/1FAIpQLSegWe6Yo8xD0HgnD0qmcnh7vpDIWnVlnzJd62HUkLUvCWSSeQ/formResponse" method="POST" target="signup-sink">
+            <label for="signup-email">Email address</label>
+            <div class="signup-row">
+              <input id="signup-email" type="email" name="entry.318605875" required autocomplete="email" placeholder="you@university.edu">
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+            <input type="hidden" name="fvv" value="1">
+            <input type="hidden" name="pageHistory" value="0">
+            <p class="note signup-thanks" hidden>Thanks, you are on the list.</p>
+          </form>
+          <iframe name="signup-sink" title="Sign-up submission target" hidden></iframe>
         </div>
         <aside>
         <div class="card">
@@ -1212,6 +1231,22 @@
     }
     window.addEventListener('hashchange', reveal);
     reveal();
+  })();
+
+  // Mailing-list sign-up: the form posts to the Google Form inside a hidden iframe, then shows a thank-you here.
+  (function () {
+    var form = document.getElementById('signup');
+    if (!form) return;
+    var sink = document.querySelector('iframe[name="signup-sink"]');
+    var thanks = form.querySelector('.signup-thanks');
+    var submitted = false;
+    form.addEventListener('submit', function () { submitted = true; thanks.hidden = true; });
+    sink.addEventListener('load', function () {
+      if (!submitted) return;
+      submitted = false;
+      form.reset();
+      thanks.hidden = false;
+    });
   })();
 
   // Scroll spy: highlight the nav link whose section is currently in view.

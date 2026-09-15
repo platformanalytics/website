@@ -268,8 +268,8 @@
     .fora span { color: var(--ink-soft); font-size: .88rem; }
 
     /* ---------- Contact ---------- */
-    .connect { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
-    .connect .card + .card { margin-top: 0; }
+    .connect { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+    .form-frame { width: 100%; max-width: 640px; height: 520px; border: 0; border-radius: 12px; background: #fff; }
     @media (max-width: 860px) { .connect { grid-template-columns: 1fr; } }
     .organizers { list-style: none; margin: 0; padding: 0; }
     .organizers li { display: flex; align-items: center; gap: .9rem; padding: .7rem 0; border-top: 1px solid var(--line); }
@@ -283,7 +283,7 @@
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
 
     @media print {
-      .site-header, .hero .actions, .skip { display: none !important; }
+      .site-header, .hero .actions, .skip, .form-frame { display: none !important; }
       .hero { background: none; color: var(--ink); }
       .hero h1 em { background: none; color: inherit; }
       details.panel, .card { box-shadow: none; }
@@ -1160,10 +1160,15 @@
   <section class="block" id="connect">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">Contact</div>
-        <h2>Organizers and contact</h2>
+        <div class="kicker">Stay connected</div>
+        <h2>Get future updates</h2>
+        <p>Enter your email address to receive announcements about calls for papers, programs and registration.</p>
       </div>
       <div class="connect">
+        <div>
+          <iframe class="form-frame" title="WoPA mailing list sign-up form" src="https://docs.google.com/forms/d/e/1FAIpQLSegWe6Yo8xD0HgnD0qmcnh7vpDIWnVlnzJd62HUkLUvCWSSeQ/viewform?embedded=true" loading="lazy">Loading&hellip;</iframe>
+        </div>
+        <aside>
         <div class="card">
           <h3>Organizers</h3>
           <ul class="organizers">
@@ -1176,6 +1181,7 @@
           <h3>Contact</h3>
           <p style="margin:0">Email <span class="contact">Workshoponplatformanalytics</span>, followed by the &ldquo;at&rdquo; symbol, and then <span class="contact">gmail.com</span>.</p>
         </div>
+        </aside>
       </div>
     </div>
   </section>

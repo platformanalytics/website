@@ -100,6 +100,7 @@
     .nav { display: flex; flex-wrap: wrap; align-items: center; gap: .1rem; margin: 0; padding: 0; list-style: none; }
     .nav a { display: inline-block; padding: .4rem .7rem; border-radius: 8px; font-size: .9rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
     .nav a:hover { background: var(--bg-soft); color: var(--ink); }
+    .nav a.active { background: var(--bg-soft); color: var(--ink); font-weight: 600; }
     .nav a.cta { background: var(--ink); color: #fff; margin-left: .4rem; }
     .nav a.cta:hover { background: var(--dark-2); }
     @media (max-width: 720px) {
@@ -330,7 +331,6 @@
     <div class="wrap">
       <div class="section-head">
         <div class="kicker">About the workshop</div>
-        <h2>Scholarly communication about platform analytics</h2>
       </div>
       <div class="grid-2">
         <div class="prose">
@@ -346,8 +346,8 @@
           <div class="card">
             <h3>At a glance</h3>
             <dl class="kv">
-              <div><dt>Since</dt><dd>2023, four editions so far</dd></div>
-              <div><dt>Format</dt><dd>Single track, in person, roughly ten papers with discussants</dd></div>
+              <div><dt>Since</dt><dd>Annually since 2023</dd></div>
+              <div><dt>Format</dt><dd>Single track, in person, ten papers with discussants</dd></div>
               <div><dt>Venue</dt><dd>Rady School of Management, University of California, San Diego</dd></div>
               <div><dt>Organizers</dt><dd><a href="https://sites.google.com/view/minkyung-kim/home" target="_blank" rel="noopener">Minkyung Kim</a> (CMU), <a href="https://dadepro.github.io/" target="_blank" rel="noopener">Davide Proserpio</a> (USC), <a href="https://kennethcwilbur.github.io/website//" target="_blank" rel="noopener">Kenneth C. Wilbur</a> (UCSD)</dd></div>
             </dl>
@@ -355,8 +355,7 @@
           <div class="card">
             <h3>Support</h3>
             <ul class="plain">
-              <li>We thank the <a href="https://www.cmu.edu/tepper/" target="_blank" rel="noopener">Carnegie Mellon University Tepper School of Business</a> for financial support.</li>
-              <li>We thank the <a href="https://www.marshall.usc.edu/institutes-and-centers/initiative-on-digital-competition" target="_blank" rel="noopener">USC Marshall Initiative on Digital Competition</a> and the <a href="https://connect.informs.org/isms/home" target="_blank" rel="noopener">INFORMS Society for Marketing Science</a> for sponsoring past workshops.</li>
+              <li>We thank the <a href="https://www.cmu.edu/tepper/" target="_blank" rel="noopener">Carnegie Mellon University Tepper School of Business</a>, <a href="https://www.marshall.usc.edu/institutes-and-centers/initiative-on-digital-competition" target="_blank" rel="noopener">USC Marshall Initiative on Digital Competition</a>, and the <a href="https://connect.informs.org/isms/home" target="_blank" rel="noopener">INFORMS Society for Marketing Science</a> for sponsoring past workshops.</li>
             </ul>
           </div>
         </aside>
@@ -1209,6 +1208,31 @@
     }
     window.addEventListener('hashchange', reveal);
     reveal();
+  })();
+
+  // Scroll spy: highlight the nav link whose section is currently in view.
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+    var targets = links.map(function (a) { return { a: a, el: document.getElementById(a.getAttribute('href').slice(1)) }; })
+                       .filter(function (t) { return t.el; });
+    if (!targets.length) return;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var line = window.innerHeight * 0.35;
+      var current = null;
+      targets.forEach(function (t) { if (t.el.getBoundingClientRect().top <= line) current = t; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) current = targets[targets.length - 1];
+      targets.forEach(function (t) {
+        var on = t === current;
+        t.a.classList.toggle('active', on);
+        if (on) t.a.setAttribute('aria-current', 'location'); else t.a.removeAttribute('aria-current');
+      });
+    }
+    function onScroll() { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
   })();
 </script>
 </body>

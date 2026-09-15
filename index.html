@@ -4,13 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Workshop on Platform Analytics (WoPA)</title>
-  <meta name="description" content="The Workshop on Platform Analytics (WoPA) is a single-track, multidisciplinary workshop presenting new scientific research on platform analytics, held annually at UC San Diego.">
+  <meta name="description" content="WoPA is an annual single-track, multidisciplinary workshop at UC San Diego presenting new research on platform analytics: using platform data to improve decisions. WoPA 2027: April 2–3, 2027; working papers due December 6, 2026.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://platformanalytics.org/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Workshop on Platform Analytics (WoPA)">
-  <meta property="og:description" content="New scientific research on platform analytics. Annual single-track workshop at UC San Diego.">
+  <meta property="og:description" content="Annual single-track workshop on platform analytics at UC San Diego. WoPA 2027: April 2–3, 2027; working papers due December 6, 2026.">
   <meta property="og:url" content="https://platformanalytics.org/">
+  <meta property="og:image" content="https://platformanalytics.org/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Workshop on Platform Analytics (WoPA), UC San Diego">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://platformanalytics.org/og-image.png">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Ccircle cx='20' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='44' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='32' cy='44' r='7' fill='%235eead4'/%3E%3Cpath d='M20 22L44 22L32 44Z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,9 +30,11 @@
     * 2027 key dates live in the "Call for Papers" section (search
       for "EDIT ME"). Update the deadline, workshop dates and the
       EasyChair link there and in the hero at the top.
-    * Registration and Travel sections are written to be evergreen.
-      When registration opens, swap in the "Register here" button
-      (search for "EDIT ME" in the Registration section).
+    * The Logistics section (registration, travel, directions) is written
+      to be evergreen. When registration opens, swap in the "Register here"
+      button (search for "EDIT ME" in the Logistics section).
+    * The meta description and og:description in <head> mention the current
+      edition's dates and deadline; update them with the Call for Papers.
     * When the 2027 program is announced, add a new "Program" block
       (copy the 2026 archive block and change the year), and move the
       2026 block into "Past workshops" if it is not already there.
@@ -60,7 +68,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    section.block, details.panel, details.sub { scroll-margin-top: 84px; }
+    section.block, details.panel, details.sub, #registration, #travel { scroll-margin-top: 84px; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
       margin: 0;
@@ -295,9 +303,8 @@
     <nav aria-label="Primary">
       <ul class="nav">
         <li><a href="#about">About</a></li>
-        <li><a href="#cfp">Current edition</a></li>
-        <li><a href="#registration">Registration</a></li>
-        <li><a href="#travel">Travel</a></li>
+        <li><a href="#cfp">2027 CFP</a></li>
+        <li><a href="#logistics">Logistics</a></li>
         <li><a href="#past">Past workshops</a></li>
         <li><a href="#connect">Contact</a></li>
         <li><a class="cta" href="https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ" target="_blank" rel="noopener">Watch talks</a></li>
@@ -507,15 +514,15 @@
     </div>
   </section>
 
-  <!-- ================= REGISTRATION ================= -->
-  <section class="block" id="registration">
+  <!-- ================= LOGISTICS: registration, travel and directions ================= -->
+  <section class="block" id="logistics">
     <div class="wrap">
       <div class="section-head">
-        <div class="kicker">Registration</div>
-        <h2>Attending the workshop</h2>
+        <div class="kicker">Logistics</div>
+        <h2>Registration, travel and directions</h2>
         <p>All attendees must register. Registration fees only pay for EasyChair and catering.</p>
       </div>
-      <div class="grid-2">
+      <div class="grid-2" id="registration">
         <div class="prose">
           <!-- EDIT ME: when registration opens, replace the paragraph below with:
           <p><a class="btn btn-primary" href="REGISTRATION-LINK" target="_blank" rel="noopener">Register here</a></p> -->
@@ -536,16 +543,7 @@
           </div>
         </aside>
       </div>
-    </div>
-  </section>
-
-  <section class="block" id="travel">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">Practical information</div>
-        <h2>Travel, accommodation and directions</h2>
-      </div>
-      <div class="travel prose">
+      <div class="travel prose" id="travel">
         <h4>Travel to San Diego</h4>
         <ol>
           <li><a href="https://www.alaskaair.com/" target="_blank" rel="noopener">Alaska Air</a> operates the most point-to-point flights to/from San Diego.</li>

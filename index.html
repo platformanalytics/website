@@ -19,6 +19,189 @@
   <meta name="twitter:image" content="https://platformanalytics.org/og-image.png">
   <meta name="theme-color" content="#0b0f14">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Ccircle cx='20' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='44' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='32' cy='44' r='7' fill='%235eead4'/%3E%3Cpath d='M20 22L44 22L32 44Z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+  <!-- Structured data (schema.org JSON-LD): organization, venue, the workshop series and its editions. Update the WoPA 2027 event (dates, deadline, fees) with the CFP each year and add the finished edition as a past event. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://platformanalytics.org/#org",
+      "name": "Workshop on Platform Analytics",
+      "alternateName": "WoPA",
+      "url": "https://platformanalytics.org/",
+      "logo": "https://platformanalytics.org/og-image.png",
+      "email": "workshoponplatformanalytics@gmail.com",
+      "sameAs": [
+        "https://www.youtube.com/channel/UCYmvI4A0lvtfSdZbItBxZcQ"
+      ]
+    },
+    {
+      "@type": "Place",
+      "@id": "https://platformanalytics.org/#venue",
+      "name": "Rady School of Management, University of California, San Diego",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5 Scholars Drive North",
+        "addressLocality": "La Jolla",
+        "addressRegion": "CA",
+        "postalCode": "92093",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "EventSeries",
+      "@id": "https://platformanalytics.org/#series",
+      "name": "Workshop on Platform Analytics (WoPA)",
+      "description": "Annual single-track, multidisciplinary workshop at UC San Diego presenting new scientific research on platform analytics: using platform data to improve decisions in platform contexts.",
+      "url": "https://platformanalytics.org/",
+      "startDate": "2023-04-07",
+      "location": {
+        "@id": "https://platformanalytics.org/#venue"
+      },
+      "organizer": {
+        "@id": "https://platformanalytics.org/#org"
+      },
+      "sponsor": [
+        {
+          "@type": "Organization",
+          "name": "Carnegie Mellon University Tepper School of Business",
+          "url": "https://www.cmu.edu/tepper/"
+        },
+        {
+          "@type": "Organization",
+          "name": "USC Marshall Initiative on Digital Competition",
+          "url": "https://www.marshall.usc.edu/institutes-and-centers/initiative-on-digital-competition"
+        },
+        {
+          "@type": "Organization",
+          "name": "INFORMS Society for Marketing Science",
+          "url": "https://connect.informs.org/isms/home"
+        }
+      ]
+    },
+    {
+      "@type": "Event",
+      "@id": "https://platformanalytics.org/#wopa2027",
+      "name": "WoPA 2027: Workshop on Platform Analytics",
+      "startDate": "2027-04-02",
+      "endDate": "2027-04-03",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@id": "https://platformanalytics.org/#venue"
+      },
+      "organizer": {
+        "@id": "https://platformanalytics.org/#org"
+      },
+      "superEvent": {
+        "@id": "https://platformanalytics.org/#series"
+      },
+      "url": "https://platformanalytics.org/#cfp",
+      "description": "Fifth annual Workshop on Platform Analytics. Submissions open September 20, 2026; working papers are due December 6, 2026; the workshop meets April 2-3, 2027 at the Rady School of Management, UC San Diego.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Doctoral students and postdocs",
+          "price": "99",
+          "priceCurrency": "USD",
+          "url": "https://platformanalytics.org/#registration"
+        },
+        {
+          "@type": "Offer",
+          "name": "Faculty and non-profits",
+          "price": "199",
+          "priceCurrency": "USD",
+          "url": "https://platformanalytics.org/#registration"
+        },
+        {
+          "@type": "Offer",
+          "name": "Industry",
+          "price": "299",
+          "priceCurrency": "USD",
+          "url": "https://platformanalytics.org/#registration"
+        }
+      ]
+    },
+    {
+      "@type": "Event",
+      "@id": "https://platformanalytics.org/#wopa2026",
+      "name": "WoPA 2026: Workshop on Platform Analytics",
+      "startDate": "2026-04-24",
+      "endDate": "2026-04-25",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@id": "https://platformanalytics.org/#venue"
+      },
+      "organizer": {
+        "@id": "https://platformanalytics.org/#org"
+      },
+      "superEvent": {
+        "@id": "https://platformanalytics.org/#series"
+      },
+      "url": "https://platformanalytics.org/#wopa2026"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://platformanalytics.org/#wopa2025",
+      "name": "WoPA 2025: Workshop on Platform Analytics",
+      "startDate": "2025-04-04",
+      "endDate": "2025-04-05",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@id": "https://platformanalytics.org/#venue"
+      },
+      "organizer": {
+        "@id": "https://platformanalytics.org/#org"
+      },
+      "superEvent": {
+        "@id": "https://platformanalytics.org/#series"
+      },
+      "url": "https://platformanalytics.org/#wopa2025"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://platformanalytics.org/#wopa2024",
+      "name": "WoPA 2024: Workshop on Platform Analytics",
+      "startDate": "2024-04-06",
+      "endDate": "2024-04-07",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@id": "https://platformanalytics.org/#venue"
+      },
+      "organizer": {
+        "@id": "https://platformanalytics.org/#org"
+      },
+      "superEvent": {
+        "@id": "https://platformanalytics.org/#series"
+      },
+      "url": "https://platformanalytics.org/#wopa2024"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://platformanalytics.org/#wopa2023",
+      "name": "WoPA 2023: Workshop on Platform Analytics",
+      "startDate": "2023-04-07",
+      "endDate": "2023-04-08",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@id": "https://platformanalytics.org/#venue"
+      },
+      "organizer": {
+        "@id": "https://platformanalytics.org/#org"
+      },
+      "superEvent": {
+        "@id": "https://platformanalytics.org/#series"
+      },
+      "url": "https://platformanalytics.org/#wopa2023"
+    }
+  ]
+}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -33,6 +216,9 @@
     * The Logistics section (registration, travel, directions) is written
       to be evergreen. When registration opens, swap in the "Register here"
       button (search for "EDIT ME" in the Logistics section).
+    * The JSON-LD block in <head> (schema.org) lists the venue, the series and
+      each edition; refresh the current edition's dates, deadline and fees with
+      the CFP and add the finished edition to the list.
     * The meta description and og:description in <head> mention the current
       edition's dates and deadline; update them with the Call for Papers.
     * When the 2027 program is announced, add a new "Program" block
@@ -600,25 +786,25 @@
           <ol class="schedule">
             <li><time>9:00</time><div class="note">Coffee, breakfast snacks</div></li>
             <li><time>10:15</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_67_Shunto.pdf" target="_blank" rel="noopener">Can Privacy Technologies Replace Cookies? Ad Revenue in a Field Experiment</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_67_Shunto.pdf" target="_blank" rel="noopener">Can Privacy Technologies Replace Cookies? Ad Revenue in a Field Experiment</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Shunto Kobayashi</b> (Boston U.)</span><span><span class="role">Discussant</span>Yanwen Wang (UBC)</span></div>
             </div></li>
             <li><time>11:15</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_13_Ali.pdf" target="_blank" rel="noopener">Long or Short? Personalizing Ad Length and Frequency</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_13_Ali.pdf" target="_blank" rel="noopener">Long or Short? Personalizing Ad Length and Frequency</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Ali Goli</b> (U. of Rochester)</span><span><span class="role">Discussant</span>Mingyu Joo (UC Riverside)</span></div>
             </div></li>
             <li><time>12:30</time><div class="note">Lunch</div></li>
             <li><time>14:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_4_Alex.pdf" target="_blank" rel="noopener">Designing Human-AI Collaboration: A Sufficient-Statistic Approach</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_4_Alex.pdf" target="_blank" rel="noopener">Designing Human-AI Collaboration: A Sufficient-Statistic Approach</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Alex Moehring</b> (Purdue)</span><span><span class="role">Discussant</span>Sam Goldberg (Stanford)</span></div>
             </div></li>
             <li><time>15:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_54_YuSong.pdf" target="_blank" rel="noopener">Optimizing Multi-Stage Personalization in the Customer Journey</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_54_YuSong.pdf" target="_blank" rel="noopener">Optimizing Multi-Stage Personalization in the Customer Journey</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Yu Song</b> (U. of Michigan)</span><span><span class="role">Discussant</span>Joel Persson (Spotify)</span></div>
             </div></li>
             <li><time>16:00</time><div class="note">Break</div></li>
             <li><time>16:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_77_Malika.pdf" target="_blank" rel="noopener">Ranking Algorithms and Equilibrium Prices</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_77_Malika.pdf" target="_blank" rel="noopener">Ranking Algorithms and Equilibrium Prices</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Malika Korganbekova</b> (U. of Chicago)</span><span><span class="role">Discussant</span>Song Yao (WUSTL)</span></div>
             </div></li>
             <li><time>18:00</time><div class="note">Dinner at the Bella (vegan option: tacos de nopal, mini churros)</div></li>
@@ -628,25 +814,25 @@
           <ol class="schedule">
             <li><time>8:30</time><div class="note">Coffee, breakfast snacks</div></li>
             <li><time>9:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_70_Tal.pdf" target="_blank" rel="noopener">How Short-Term Rental Regulations Reshape Urban Spending: Evidence from New York City's Restaurant Industry</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_70_Tal.pdf" target="_blank" rel="noopener">How Short-Term Rental Regulations Reshape Urban Spending: Evidence from New York City's Restaurant Industry</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Tal Shoshani</b> (USC)</span><span><span class="role">Discussant</span>Meng Liu (WUSTL)</span></div>
             </div></li>
             <li><time>10:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_44_TaiLam.pdf" target="_blank" rel="noopener">The Impact of LLM Adoption on Online User Behavior</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_44_TaiLam.pdf" target="_blank" rel="noopener">The Impact of LLM Adoption on Online User Behavior</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>H. Tai Lam</b> (UCLA)</span><span><span class="role">Discussant</span>Tommaso Bondi (Cornell)</span></div>
             </div></li>
             <li><time>11:45</time><div class="note">Lunch</div></li>
             <li><time>13:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_71_Omid.pdf" target="_blank" rel="noopener">Auctions Meet Bandits: An Empirical Analysis</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_71_Omid.pdf" target="_blank" rel="noopener">Auctions Meet Bandits: An Empirical Analysis</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Omid Rafieian</b> (Cornell)</span><span><span class="role">Discussant</span>Ron Berman (U. of Pennsylvania)</span></div>
             </div></li>
             <li><time>14:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_84_LenaSong.pdf" target="_blank" rel="noopener">The Influence of the Vocal Minority: Evidence from Social Media Comments</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_84_LenaSong.pdf" target="_blank" rel="noopener">The Influence of the Vocal Minority: Evidence from Social Media Comments</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Lena Song</b> (UIUC)</span><span><span class="role">Discussant</span>Yiting Deng (UCL)</span></div>
             </div></li>
             <li><time>15:00</time><div class="note">Break</div></li>
             <li><time>15:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2026-accepted/WoPA_2026_paper_73_Helen.pdf" target="_blank" rel="noopener">Can Increased Platform Liability Reduce Sex Trafficking? Evidence from the Price Effect</a>
+              <a class="talk-title" href="wopa2026-accepted/WoPA_2026_paper_73_Helen.pdf" target="_blank" rel="noopener">Can Increased Platform Liability Reduce Sex Trafficking? Evidence from the Price Effect</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Helen Zeng</b> (UC Davis)</span><span><span class="role">Discussant</span>Yi Liu (U. of Wisconsin)</span></div>
             </div></li>
             <li><time>16:45</time><div class="note">Workshop conclusion, optional walk to gliderport for sunset/dinner/drinks at own expense. Be advised of wind and uneven terrain. Tandem flights available onsite.</div></li>
@@ -741,25 +927,25 @@
           <ol class="schedule">
             <li><time>9:00</time><div class="note">Coffee, breakfast snacks</div></li>
             <li><time>10:15</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20faltings%20-%20pricing%20the%20right%20to%20renege.pdf" target="_blank" rel="noopener">Pricing the Right to Renege in Search Markets: Evidence from Trucking</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20faltings%20-%20pricing%20the%20right%20to%20renege.pdf" target="_blank" rel="noopener">Pricing the Right to Renege in Search Markets: Evidence from Trucking</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Richard Faltings</b> (UT Austin)</span><span><span class="role">Discussant</span>Yingkang Xie (WUSTL)</span></div>
             </div></li>
             <li><time>11:15</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20freimane%20-%20gender%20bias,%20feedback,%20productivity.pdf" target="_blank" rel="noopener">Gender Bias, Feedback, and Productivity</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20freimane%20-%20gender%20bias,%20feedback,%20productivity.pdf" target="_blank" rel="noopener">Gender Bias, Feedback, and Productivity</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Marita Freimane</b> (Zurich)</span><span><span class="role">Discussant</span>Meng Liu (WUSTL)</span></div>
             </div></li>
             <li><time>12:30</time><div class="note">Lunch</div></li>
             <li><time>14:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20yu%20-%20welfare%20effects%20of%20sponsored%20product%20advertising.pdf" target="_blank" rel="noopener">The Welfare Effects of Sponsored Product Advertising</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20yu%20-%20welfare%20effects%20of%20sponsored%20product%20advertising.pdf" target="_blank" rel="noopener">The Welfare Effects of Sponsored Product Advertising</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Chuan Yu</b> (HBS)</span><span><span class="role">Discussant</span>Tai Lam (UCLA)</span></div>
             </div></li>
             <li><time>15:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20kaye%20-%20welfare%20effects%20of%20personalized%20recommendations.pdf" target="_blank" rel="noopener">The Personalization Paradox: Welfare Effects of Personalized Recommendations in Two-Sided Digital Markets</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20kaye%20-%20welfare%20effects%20of%20personalized%20recommendations.pdf" target="_blank" rel="noopener">The Personalization Paradox: Welfare Effects of Personalized Recommendations in Two-Sided Digital Markets</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Aaron Kaye</b> (MIT)</span><span><span class="role">Discussant</span>Giovanni Compiani (Chicago)</span></div>
             </div></li>
             <li><time>16:00</time><div class="note">Break</div></li>
             <li><time>16:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20gandhi%20et%20al%20-%20eqm%20effects%20of%20fake%20reviews%20on%20amazon.pdf" target="_blank" rel="noopener">Misinformation and Mistrust: The Equilibrium Effects of Fake Reviews on Amazon.com</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20gandhi%20et%20al%20-%20eqm%20effects%20of%20fake%20reviews%20on%20amazon.pdf" target="_blank" rel="noopener">Misinformation and Mistrust: The Equilibrium Effects of Fake Reviews on Amazon.com</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Ashvin Gandhi</b> (UCLA)</span><span><span class="role">Discussant</span>Malika Korganbekova (Chicago)</span></div>
             </div></li>
             <li><time>17:30</time><div>
@@ -773,25 +959,25 @@
           <ol class="schedule">
             <li><time>8:30</time><div class="note">Coffee, breakfast snacks</div></li>
             <li><time>9:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20farronato%20et%20al%20-%20data%20sharing%20and%20website%20competition.pdf" target="_blank" rel="noopener">Data Sharing and Website Competition: The Role of Dark Patterns</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20farronato%20et%20al%20-%20data%20sharing%20and%20website%20competition.pdf" target="_blank" rel="noopener">Data Sharing and Website Competition: The Role of Dark Patterns</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Chiara Farronato</b> (HBS)</span><span><span class="role">Discussant</span>Song Yao (WUSTL)</span></div>
             </div></li>
             <li><time>10:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20zhao%20berman%20-%20algorithmic%20collusion%20of%20pricing%20and%20advertising.pdf" target="_blank" rel="noopener">Algorithmic Collusion of Pricing and Advertising on E-commerce Platforms</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20zhao%20berman%20-%20algorithmic%20collusion%20of%20pricing%20and%20advertising.pdf" target="_blank" rel="noopener">Algorithmic Collusion of Pricing and Advertising on E-commerce Platforms</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Hangcheng Zhao</b> (U-Penn.)</span><span><span class="role">Discussant</span>Sridhar Moorthy (Toronto)</span></div>
             </div></li>
             <li><time>11:45</time><div class="note">Lunch</div></li>
             <li><time>13:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20larsen%20proserpio%20-%20information%20signals%20in%20sponsored%20search.pdf" target="_blank" rel="noopener">Information Signals in Sponsored Search: Evidence from Google&rsquo;s BERT</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20larsen%20proserpio%20-%20information%20signals%20in%20sponsored%20search.pdf" target="_blank" rel="noopener">Information Signals in Sponsored Search: Evidence from Google&rsquo;s BERT</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Poet Larsen</b> (USC)</span><span><span class="role">Discussant</span>Olivia Natan (UC Berkeley)</span></div>
             </div></li>
             <li><time>14:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20fang%20et%20al%20-%20unraveling%20review%20polarization%20via%20llms.pdf" target="_blank" rel="noopener">Shifting Standards or Changing Preferences? Unraveling Review Polarization via LLMs</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20fang%20et%20al%20-%20unraveling%20review%20polarization%20via%20llms.pdf" target="_blank" rel="noopener">Shifting Standards or Changing Preferences? Unraveling Review Polarization via LLMs</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Limin Fang</b> (UBC)</span><span><span class="role">Discussant</span>Tong Guo (Duke)</span></div>
             </div></li>
             <li><time>15:00</time><div class="note">Break</div></li>
             <li><time>15:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2025-accepted/wopa2025%20-%20mosaffa%20et%20al%20-%20Visual%20Polarization%20Measurement%20Using%20Counterfactual%20Image%20Generation.pdf" target="_blank" rel="noopener">Visual Polarization Measurement Using Counterfactual Image Generation</a>
+              <a class="talk-title" href="wopa2025-accepted/wopa2025%20-%20mosaffa%20et%20al%20-%20Visual%20Polarization%20Measurement%20Using%20Counterfactual%20Image%20Generation.pdf" target="_blank" rel="noopener">Visual Polarization Measurement Using Counterfactual Image Generation</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Omid Rafieian</b> (Cornell)</span><span><span class="role">Discussant</span>David Holtz (UC Berkeley)</span></div>
             </div></li>
             <li><time>16:45</time><div class="note">Workshop conclusion, optional walk to gliderport for sunset/dinner/drinks at own expense. Be advised of wind and uneven terrain. Tandem flights available onsite.</div></li>
@@ -886,29 +1072,29 @@
           <ol class="schedule">
             <li><time>9:00</time><div class="note">Coffee, light breakfast</div></li>
             <li><time>9:45</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20hui%20designing%20quality%20certificates%20on%20ebay.pdf" target="_blank" rel="noopener">Designing Quality Certificates: Insights from eBay</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20hui%20designing%20quality%20certificates%20on%20ebay.pdf" target="_blank" rel="noopener">Designing Quality Certificates: Insights from eBay</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Xiang Hui</b> (WUSTL)</span><span><span class="role">Discussant</span>Tommaso Bondi (Cornell)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=6Zu8ADX_EHY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>11:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20reimers%20detection,%20measurement,%20welfare%20anlaysis%20of%20platform%20bias.pdf" target="_blank" rel="noopener">A Framework for Detection, Measurement, and Welfare Analysis of Platform Bias</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20reimers%20detection,%20measurement,%20welfare%20anlaysis%20of%20platform%20bias.pdf" target="_blank" rel="noopener">A Framework for Detection, Measurement, and Welfare Analysis of Platform Bias</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Imke Reimers</b> (Cornell)</span><span><span class="role">Discussant</span>Dante Donati (Columbia)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=A7ioonPuBks" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>12:00</time><div class="note">Lunch, UCSD Faculty Club</div></li>
             <li><time>13:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20malik%20algo%20failures%20and%20consumer%20response%20on%20zillow.pdf" target="_blank" rel="noopener">Algorithm Failures and Consumers&rsquo; Response: Evidence from Zillow</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20malik%20algo%20failures%20and%20consumer%20response%20on%20zillow.pdf" target="_blank" rel="noopener">Algorithm Failures and Consumers&rsquo; Response: Evidence from Zillow</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Nikhil Malik</b> (USC)</span><span><span class="role">Discussant</span>Puneet Manchanda (Michigan)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=v8hGoF432VA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>14:45</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20mummalaneni%20et%20al,%20how%20do%20content%20producers%20respond%20to%20engagement.pdf" target="_blank" rel="noopener">How Do Content Producers Respond to Engagement on Social Media Platforms?</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20mummalaneni%20et%20al,%20how%20do%20content%20producers%20respond%20to%20engagement.pdf" target="_blank" rel="noopener">How Do Content Producers Respond to Engagement on Social Media Platforms?</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Simha Mummalaneni</b> (Washington)</span><span><span class="role">Discussant</span>Linli Xu (Minnesota)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=r_wiDSJuKdw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>16:00</time><div class="note">Refreshments</div></li>
             <li><time>16:40</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20banerjee%20platform%20monetization%20on%20goodreads.pdf" target="_blank" rel="noopener">Unintended Consequences of Platform Monetization on Digital Cultural Markets: Evidence from a Natural Experiment on Goodreads</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20banerjee%20platform%20monetization%20on%20goodreads.pdf" target="_blank" rel="noopener">Unintended Consequences of Platform Monetization on Digital Cultural Markets: Evidence from a Natural Experiment on Goodreads</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Shrabastee Banerjee</b> (Tilburg)</span><span><span class="role">Discussant</span>Unnati Narang (UIUC)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=hhpIaYi8V3c" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
@@ -919,28 +1105,28 @@
           <ol class="schedule">
             <li><time>8:30</time><div class="note">Coffee, light breakfast</div></li>
             <li><time>9:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20persson%20mitigating%20algo%20bias%20in%20treatment%20effect%20estimation.pdf" target="_blank" rel="noopener">Detecting and Mitigating Algorithmic Bias in Treatment Effect Estimation: Theory, Methods, and Empirical Evidence</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20persson%20mitigating%20algo%20bias%20in%20treatment%20effect%20estimation.pdf" target="_blank" rel="noopener">Detecting and Mitigating Algorithmic Bias in Treatment Effect Estimation: Theory, Methods, and Empirical Evidence</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Joel Persson</b> (Spotify)</span><span><span class="role">Discussant</span>Michelangelo Rossi (T&eacute;l&eacute;com Paris)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=HTrzBQgIOCM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>10:15</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20fong%20content%20generation%20on%20social%20media%20with%20negative%20feedback.pdf" target="_blank" rel="noopener">Content Generation on Social Media: The Role of Negative Peer Feedback</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20fong%20content%20generation%20on%20social%20media%20with%20negative%20feedback.pdf" target="_blank" rel="noopener">Content Generation on Social Media: The Role of Negative Peer Feedback</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Varad Deolankar</b> (Michigan)</span><span><span class="role">Discussant</span>Brett Hollenbeck (UCLA)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=asN3TaZVl1E" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>11:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20moehring%20personalized%20rankings%20and%20user%20engagement%20on%20reddit.pdf" target="_blank" rel="noopener">Personalized Rankings and User Engagement: An Empirical Evaluation of the Reddit News Feed</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20moehring%20personalized%20rankings%20and%20user%20engagement%20on%20reddit.pdf" target="_blank" rel="noopener">Personalized Rankings and User Engagement: An Empirical Evaluation of the Reddit News Feed</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Alex Moehring</b> (MIT)</span><span><span class="role">Discussant</span>Jia Liu (HKUST)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=gI96Wukwff0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>12:40</time><div class="note">Lunch, UCSD Faculty Club</div></li>
             <li><time>14:10</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20mela%20advertiser%20learning%20in%20direct%20adv%20markets.pdf" target="_blank" rel="noopener">Advertiser Learning in Direct Advertising Markets</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20mela%20advertiser%20learning%20in%20direct%20adv%20markets.pdf" target="_blank" rel="noopener">Advertiser Learning in Direct Advertising Markets</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Carl Mela</b> (Duke)</span><span><span class="role">Discussant</span>Nils Wernerfelt (Northwestern)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=JifLvj3ri1I" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>15:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2024-accepted/wopa2024%20simonov%20attention%20spillovers%20from%20news%20to%20ads.pdf" target="_blank" rel="noopener">Attention Spillovers from News to Ads: Evidence from an Eye-Tracking Experiment</a>
+              <a class="talk-title" href="wopa2024-accepted/wopa2024%20simonov%20attention%20spillovers%20from%20news%20to%20ads.pdf" target="_blank" rel="noopener">Attention Spillovers from News to Ads: Evidence from an Eye-Tracking Experiment</a>
               <div class="talk-meta"><span><span class="role">Presenter</span><b>Andrey Simonov</b> (Columbia)</span><span><span class="role">Discussant</span>Caio Waisman (Northwestern)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=Ax-rqSKyH1E" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
@@ -1034,31 +1220,31 @@
           <h4 class="day">Friday, April 7, 2023</h4>
           <ol class="schedule">
             <li><time>12:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Ursu%20et%20al.%20WoPA%20Online%20Advertising%20as%20Passive%20Search%20v2.pdf" target="_blank" rel="noopener">Online Advertising as Passive Search</a>
+              <a class="talk-title" href="wopa2023-accepted/Ursu%20et%20al.%20WoPA%20Online%20Advertising%20as%20Passive%20Search%20v2.pdf" target="_blank" rel="noopener">Online Advertising as Passive Search</a>
               <div class="authors">Raluca M. Ursu (NYU), <b>Andrey Simonov</b> (Columbia U.), Eunkyung An (NYU)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Jura Liaukonyte (Cornell U.)</span></div>
               <a class="video" href="https://youtu.be/MqUvUALehBU" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>13:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Kim%20et%20al.%20WoPA2023%20Tipping%20in%20a%20Digital%20Services%20Marketplace.pdf" target="_blank" rel="noopener">Gratuities in a Digital Services Marketplace</a>
+              <a class="talk-title" href="wopa2023-accepted/Kim%20et%20al.%20WoPA2023%20Tipping%20in%20a%20Digital%20Services%20Marketplace.pdf" target="_blank" rel="noopener">Gratuities in a Digital Services Marketplace</a>
               <div class="authors"><b>Seung Hyun Kim</b> (UC San Diego), On Amir (UC San Diego), Kenneth C. Wilbur (UC San Diego)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Avner Strulov-Shlain (U. of Chicago)</span></div>
               <a class="video" href="https://youtu.be/rwLSJqe3mwY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>15:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Lam%20WoPA2023%20Platform%20Search%20Design%20and%20Market%20Power.pdf" target="_blank" rel="noopener">Platform Search Design and Market Power</a>
+              <a class="talk-title" href="wopa2023-accepted/Lam%20WoPA2023%20Platform%20Search%20Design%20and%20Market%20Power.pdf" target="_blank" rel="noopener">Platform Search Design and Market Power</a>
               <div class="authors"><b>H. Tai Lam</b> (UCLA)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Giovanni Compiani (U. of Chicago)</span></div>
               <a class="video" href="https://youtu.be/Qzv_S6B5llA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>16:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Ko%20et%20al.%20WoPA2023%20Retention%20Management%20using%20Dynamic%20Off-Policy%20Policy%20Learning.pdf" target="_blank" rel="noopener">When to Target Customers? Retention Management using Dynamic Off-Policy Policy Learning</a>
+              <a class="talk-title" href="wopa2023-accepted/Ko%20et%20al.%20WoPA2023%20Retention%20Management%20using%20Dynamic%20Off-Policy%20Policy%20Learning.pdf" target="_blank" rel="noopener">When to Target Customers? Retention Management using Dynamic Off-Policy Policy Learning</a>
               <div class="authors">Ryuya Ko (U. of Tokyo), <b>Kosuke Uetake</b> (Yale U.), Kohei Yata (U. of Wisconsin-Madison), Ryosuke Okada (ZOZO Inc.)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Justin Huang (U. of Michigan)</span></div>
               <a class="video" href="https://youtu.be/COOr1J5Z6MA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>17:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Xie%20Zhu%20WoPA2023%20Platform%20Leakage%20Incentive%20Conflicts%20in%20Two-Sided%20Markets.pdf" target="_blank" rel="noopener">Platform Leakage: Incentive Conflicts in Two-Sided Markets</a>
+              <a class="talk-title" href="wopa2023-accepted/Xie%20Zhu%20WoPA2023%20Platform%20Leakage%20Incentive%20Conflicts%20in%20Two-Sided%20Markets.pdf" target="_blank" rel="noopener">Platform Leakage: Incentive Conflicts in Two-Sided Markets</a>
               <div class="authors"><b>Yingkang Xie</b> (Northwestern U.), Huaiyu Zhu (Lalamove)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Jessica Fong (U. of Michigan)</span></div>
             </div></li>
@@ -1067,31 +1253,31 @@
           <h4 class="day">Saturday, April 8, 2023</h4>
           <ol class="schedule">
             <li><time>9:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Malik%20Manzoor%20WoPA2023%20Does%20Machine%20Learning%20Amplify%20Pricing%20Errors%20in%20Housing%20Market.pdf" target="_blank" rel="noopener">Does Machine Learning Amplify Pricing Errors in Housing Market? Economics of ML Feedback Loops</a>
+              <a class="talk-title" href="wopa2023-accepted/Malik%20Manzoor%20WoPA2023%20Does%20Machine%20Learning%20Amplify%20Pricing%20Errors%20in%20Housing%20Market.pdf" target="_blank" rel="noopener">Does Machine Learning Amplify Pricing Errors in Housing Market? Economics of ML Feedback Loops</a>
               <div class="authors"><b>Nikhil Malik</b> (U. of Southern California), Emaad Manzoor (Cornell U.)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Ron Berman (U. of Pennsylvania)</span></div>
               <a class="video" href="https://youtu.be/CmPw6s21hvg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>10:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Chen%20et%20al.%20WoPA2023%20The%20Effects%20of%20Diversity%20in%20Algorithmic%20Recommendations%20on%20Digital%20Content%20Consumption-A%20Field%20Experiment.pdf" target="_blank" rel="noopener">The Effects of Diversity in Algorithmic Recommendations on Digital Content Consumption: A Field Experiment</a>
+              <a class="talk-title" href="wopa2023-accepted/Chen%20et%20al.%20WoPA2023%20The%20Effects%20of%20Diversity%20in%20Algorithmic%20Recommendations%20on%20Digital%20Content%20Consumption-A%20Field%20Experiment.pdf" target="_blank" rel="noopener">The Effects of Diversity in Algorithmic Recommendations on Digital Content Consumption: A Field Experiment</a>
               <div class="authors"><b>Guangying Chen</b> (Washington U. in St. Louis), Tat Y. Chan (Washington U. in St. Louis), Dennis J. Zhang (Washington U. in St. Louis), Senmao Liu (NetEase Cloud Music Inc.), Yuxiang Wu (NetEase Cloud Music Inc.)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>David Holtz (UC Berkeley)</span></div>
               <a class="video" href="https://youtu.be/-JID9TkJBJI" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>11:00</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Yang%20et%20al.%20WoPA2023%20Advertising%20as%20Information%20for%20Ranking%20E-Commerce%20Search%20Listings.pdf" target="_blank" rel="noopener">Advertising as Information for Ranking E-Commerce Search Listings</a>
+              <a class="talk-title" href="wopa2023-accepted/Yang%20et%20al.%20WoPA2023%20Advertising%20as%20Information%20for%20Ranking%20E-Commerce%20Search%20Listings.pdf" target="_blank" rel="noopener">Advertising as Information for Ranking E-Commerce Search Listings</a>
               <div class="authors"><b>Joonhyuk Yang</b> (Notre Dame), Navdeep Sahni (Stanford U.), Harikesh Nair (Google), Xi Xiong (TikTok)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Fei Long (U. of North Carolina)</span></div>
               <a class="video" href="https://youtu.be/FIs52REhIxo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>13:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Deolankar%20et%20al%20WoPA%202023%20The%20Impact%20of%20Engagement%20with%20User-generated%20Content%20in%20Online%20Discussion%20Forums%20(1).pdf" target="_blank" rel="noopener">The Impact of Engagement with User-generated Content in Online Discussion Forums</a>
+              <a class="talk-title" href="wopa2023-accepted/Deolankar%20et%20al%20WoPA%202023%20The%20Impact%20of%20Engagement%20with%20User-generated%20Content%20in%20Online%20Discussion%20Forums%20(1).pdf" target="_blank" rel="noopener">The Impact of Engagement with User-generated Content in Online Discussion Forums</a>
               <div class="authors"><b>Varad Deolankar</b> (U. of Michigan), Ali Goli (U. of Washington), S. Sriram (U. of Michigan), Pradeep K. Chintagunta (U. of Chicago)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Davide Proserpio (U. of Southern California)</span></div>
               <a class="video" href="https://www.youtube.com/watch?v=IdxqP2_3NFw" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>
             </div></li>
             <li><time>14:30</time><div>
-              <a class="talk-title" href="https://github.com/platformanalytics/website/raw/main/wopa2023-accepted/Jimenez-Duran%20WoPA2023%20The%20Economics%20of%20Content%20Moderation.pdf" target="_blank" rel="noopener">The Economics of Content Moderation: Theory and Experimental Evidence from Hate Speech on Twitter</a>
+              <a class="talk-title" href="wopa2023-accepted/Jimenez-Duran%20WoPA2023%20The%20Economics%20of%20Content%20Moderation.pdf" target="_blank" rel="noopener">The Economics of Content Moderation: Theory and Experimental Evidence from Hate Speech on Twitter</a>
               <div class="authors"><b>Rafael Jimenez-Duran</b> (U. of Chicago)</div>
               <div class="talk-meta"><span><span class="role">Discussant</span>Pinar Yildirim (U. of Pennsylvania)</span></div>
               <a class="video" href="https://youtu.be/tSw8MoTRtA4" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube</a>

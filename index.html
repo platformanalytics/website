@@ -18,7 +18,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://platformanalytics.org/og-image.png">
   <meta name="theme-color" content="#0b0f14">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Ccircle cx='20' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='44' cy='22' r='7' fill='%23fff'/%3E%3Ccircle cx='32' cy='44' r='7' fill='%235eead4'/%3E%3Cpath d='M20 22L44 22L32 44Z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="icon" href="wopa_thumbnails/favicon.ico" sizes="32x32">
+  <link rel="icon" href="wopa_thumbnails/wopa-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="wopa_thumbnails/wopa-mark-180.png">
   <!-- Structured data (schema.org JSON-LD): organization, venue, the workshop series and its editions. Update the WoPA 2027 event (dates, deadline, fees) with the CFP each year and add the finished edition as a past event. -->
   <script type="application/ld+json">
 {
@@ -227,6 +229,11 @@
     * Program committee lists are plain <li> items inside each year.
     * sitemap.xml lists the page and every paper PDF; when you add or move a
       PDF, add or update its <url> entry there (robots.txt points to it).
+    * wopa_thumbnails/ holds the logo mark: wopa-mark.svg is the master,
+      wopa-mark-16.png to wopa-mark-1024.png are rasters, favicon.ico bundles
+      16/32/48; og-image.png at the root is the 1200x630 share image drawn
+      from the same mark. The header mark is the same SVG inlined in
+      <a class="brand">.
     * The 2027 program committee currently sits at the end of the
       "Call for Papers" section (id="pc2027"); move that block into the
       2027 archive panel when the program is announced.
@@ -493,7 +500,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Workshop on Platform Analytics home">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0b0f14"/><circle cx="20" cy="22" r="7" fill="#fff"/><circle cx="44" cy="22" r="7" fill="#fff"/><circle cx="32" cy="44" r="7" fill="#5eead4"/><path d="M20 22L44 22L32 44Z" fill="none" stroke="#fff" stroke-width="3"/></svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0b0f14"/><path d="M32 32L13 13.5M32 32L13 25.8M32 32L13 38.2M32 32L13 50.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M32 32L51 21M32 32L51 43" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round"/><circle cx="13" cy="13.5" r="4" fill="#fff"/><circle cx="13" cy="25.8" r="4" fill="#fff"/><circle cx="13" cy="38.2" r="4" fill="#fff"/><circle cx="13" cy="50.5" r="4" fill="#fff"/><circle cx="51" cy="21" r="6" fill="#fff"/><circle cx="51" cy="43" r="6" fill="#fff"/><circle cx="32" cy="32" r="8.5" fill="#5eead4"/></svg>
       <span>WoPA<small>Workshop on Platform Analytics</small></span>
     </a>
     <nav aria-label="Primary">
